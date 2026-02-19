@@ -5,6 +5,51 @@
 <title>Guía Staff • Rival</title>
 
 <style>
+
+/* 🌌 Fondo animado suave */
+body {
+  background: radial-gradient(circle at 20% 20%, #1a0000, #0b0b0b 60%);
+  background-attachment: fixed;
+  animation: fondoGlow 12s ease-in-out infinite alternate;
+}
+
+@keyframes fondoGlow {
+  0% { background-position: left top; filter: brightness(1); }
+  100% { background-position: right bottom; filter: brightness(1.15); }
+}
+
+/* ✨ Partículas suaves */
+body::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: url('https://i.imgur.com/8bKQX7E.png');
+  opacity: 0.05;
+  animation: particlesMove 60s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes particlesMove {
+  from { transform: translateY(0); }
+  to { transform: translateY(-1000px); }
+}
+
+/* 🦊 Animación logo mejorada */
+.logo {
+  animation: floatLogo 4s ease-in-out infinite, glowLogo 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes floatLogo {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes glowLogo {
+  from { filter: drop-shadow(0 0 5px #ff0000); }
+  to { filter: drop-shadow(0 0 18px #ff0000); }
+}
+
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
@@ -238,7 +283,7 @@ Todas las sanciones pueden ser apeladas únicamente mediante el sistema oficial 
 <tr><td>Amenazas</td><td>Ban</td><td>30d</td><td class="command">/ban %player% 30d Amenazas</td><td>Grave</td></tr>
 <tr><td>Uso de hacks comprobados</td><td>Ban</td><td>Perm</td><td class="command">/ban %player% Perm Hacks</td><td>No apelable si es evidente</td></tr>
 <tr><td>Grief al Lobby / Spawn</td><td>Ban</td><td>Perm</td><td class="command">/ban %player% Perm GriefLobby</td><td>Daño grave al servidor</td></tr>
-<tr><td>DDOS / Amenazas reales</td><td>Ban</td><td>Perm</td><td class="command">/ban %player% Perm DDOS</td><td>Reporte administrativo</td></tr>vidente (Hacks / Grief Grave)</td></tr>
+<tr><td>DDOS / Amenazas reales</td><td>Ban</td><td>Perm</td><td class="command">/ban %player% Perm DDOS</td><td>Reporte administrativo</td></tr>
 
 <tr><td>AutoClicker extremo</td><td>Ban</td><td>Perm</td><td class="command">/ban %player% Perm AutoClicker</td><td>Logs + pruebas</td></tr>
 <tr><td>Evasión de sanción</td><td>Ban</td><td>30d</td><td class="command">/ban %player% 30d Evade</td><td>Duplicar tiempo</td></tr>
@@ -313,12 +358,44 @@ Todas las sanciones pueden ser apeladas únicamente mediante el sistema oficial 
 <tr><td>Teaming</td><td>Ban</td><td>10d</td><td class="command">/ban %player% 10d Teaming</td><td>Clip</td></tr>
 <tr><td>Uso de Xray</td><td>Ban</td><td>Perm</td><td class="command">/ban %player% Perm Xray</td><td>No apelable si es evidente</td></tr>
 <tr><td>Hacks en meetup</td><td>Ban</td><td>Perm</td><td class="command">/ban %player% Perm UhcHacks</td><td>Pruebas obligatorias</td></tr>
-<tr><td>Filtración de coords</td><td>Ban</td><td>10d</td><td class="command">/ban %player% 10d CoordsLeak</td><td>Chat review</td></tr>vidente (Hacks / Grief Grave)</td></tr>
+<tr><td>Filtración de coords</td><td>Ban</td><td>10d</td><td class="command">/ban %player% 10d CoordsLeak</td><td>Chat review</td></tr>
 
 </table>
 </div>
 </div>
 
 </div>
+
+
+<!-- 📋 Formato de Atención de Apelaciones -->
+<section class="appeal-format">
+  <h2>📋 Formato para Atender una Apelación</h2>
+  <div class="card">
+    <p><strong>👤 Usuario:</strong> __________________________</p>
+    <p><strong>🆔 ID / Nick:</strong> __________________________</p>
+    <p><strong>📅 Fecha de sanción:</strong> __________________</p>
+    <p><strong>📌 Tipo de sanción:</strong> __________________</p>
+    <p><strong>⏱️ Duración:</strong> __________________________</p>
+    <p><strong>👮 Staff que sancionó:</strong> ________________</p>
+    <p><strong>📝 Motivo:</strong> ____________________________</p>
+    <p><strong>📂 Pruebas presentadas:</strong></p>
+    <ul>
+      <li>🎥 Video</li>
+      <li>🖼️ Capturas</li>
+      <li>📜 Logs</li>
+    </ul>
+    <p><strong>🧠 Revisión del Staff:</strong></p>
+    <p>______________________________________________</p>
+    <p>______________________________________________</p>
+    <p><strong>📊 Decisión Final:</strong></p>
+    <ul>
+      <li>✅ Aprobada</li>
+      <li>❌ Rechazada</li>
+      <li>➖ Reducida</li>
+    </ul>
+    <p><strong>✍️ Firma Staff:</strong> ______________________</p>
+  </div>
+</section>
+
 </body>
 </html>
