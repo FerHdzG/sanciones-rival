@@ -6,14 +6,22 @@
 
 <style>
 
-/* ====== ESTILO GENERAL ====== */
+/* ====== FONDO ANIMADO ====== */
 
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
 background:linear-gradient(135deg,#0a0a0a,#111);
+background-size:400% 400%;
+animation:fondo 18s ease infinite;
 color:white;
 display:flex;
+}
+
+@keyframes fondo{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
 }
 
 /* ====== SIDEBAR ====== */
@@ -36,13 +44,15 @@ margin-bottom:25px;
 .logo img{
 width:115px;
 animation:logoFloat 4s ease-in-out infinite;
-filter:drop-shadow(0 0 10px red);
+filter:drop-shadow(0 0 12px red);
 }
 
 @keyframes logoFloat{
 0%,100%{transform:translateY(0)}
 50%{transform:translateY(-6px)}
 }
+
+/* ====== MENÚ ====== */
 
 .menu h3{
 color:#ff2a2a;
@@ -85,13 +95,17 @@ border-bottom:1px solid #222;
 padding-bottom:6px;
 }
 
+/* ====== CARDS ====== */
+
 .card{
 background:#141414;
 padding:18px;
 border-radius:10px;
 margin-bottom:40px;
-box-shadow:0 0 10px #000;
+box-shadow:0 0 12px #000;
 border:1px solid #1f1f1f;
+font-size:13px;
+line-height:1.7;
 }
 
 /* ====== TABLAS ====== */
@@ -123,12 +137,12 @@ color:#ff4d4d;
 font-family:monospace;
 }
 
-/* ====== APELACIONES ====== */
-
-.apelacion{
-font-size:13px;
-line-height:1.7;
+.obs{
+color:#ffb3b3;
+font-size:12px;
 }
+
+/* ====== APELACIÓN ====== */
 
 .apelacion b{
 color:#ff3b3b;
@@ -150,7 +164,7 @@ color:#ff3b3b;
 <div class="menu">
 
 <h3>GUÍA</h3>
-<a href="#inicio">🎮 Bienvenida</a>
+<a href="#inicio">🌟 Bienvenida</a>
 
 <h3>SANCIONES</h3>
 <a href="#generales">🚫 Generales</a>
@@ -166,135 +180,127 @@ color:#ff3b3b;
 
 <div class="content">
 
-<!-- BIENVENIDA -->
+<!-- ===== BIENVENIDA ===== -->
 
-<h1 id="inicio">🎮 Bienvenido al Staff</h1>
+<h1 id="inicio">🌟 Bienvenida al Staff</h1>
 <div class="card">
-Guía oficial de sanciones de Rival Network.<br><br>
-• Todas las sanciones requieren pruebas.<br>
-• Escalar reincidencias.<br>
-• No abusar de permisos staff.<br>
-• Usar comandos correctos.<br><br>
-Las sanciones pueden apelarse mediante el sistema oficial.
+
+¡Hola y bienvenido al equipo de <b>Rival</b>! 👋  
+Ahora formas parte de un grupo encargado de mantener el orden, la seguridad y la competitividad dentro del servidor.
+
+🛡️ <b>Tu misión:</b>  
+• Resolver conflictos  
+• Hacer cumplir normas  
+• Proteger jugadores  
+• Mantener el respeto  
+
+📜 <b>Primeros pasos:</b>  
+• Leer reglamentos  
+• Conocer comandos  
+• Entender límites de sanción  
+
+⚖️ <b>Responsabilidad:</b>  
+Ser Staff es un privilegio y una responsabilidad. Tus decisiones impactan la experiencia de todos.
+
+🤝 <b>No estás solo:</b>  
+Ante dudas, acude a Staff superiores o Administración.
+
+🔥 Hagamos de Rival un servidor legendario.
+
 </div>
 
-<!-- GENERALES -->
+<!-- ===== GENERALES ===== -->
 
 <h1 id="generales">🚫 Sanciones Generales</h1>
 <div class="card">
+
 <table>
 <tr>
 <th>Falta</th>
 <th>Tiempo</th>
 <th>Comando</th>
-<th>Observaciones</th>
+<th>Observaciones / Escalado</th>
 </tr>
 
 <tr>
 <td>Spam</td>
-<td>30m</td>
-<td class="command">/mute %player% 30m Spam</td>
-<td>Escalar si reincide</td>
+<td>15m</td>
+<td class="command">/mute %player% 15m Spam</td>
+<td class="obs">Escala x2 / x3 / Perm</td>
 </tr>
 
 <tr>
 <td>Insultos</td>
-<td>1h</td>
-<td class="command">/mute %player% 1h Insultos</td>
-<td>Depende gravedad</td>
+<td>30m</td>
+<td class="command">/mute %player% 30m Insultos</td>
+<td class="obs">Depende gravedad</td>
 </tr>
 
 <tr>
 <td>Toxicidad</td>
-<td>3h</td>
-<td class="command">/mute %player% 3h Toxicidad</td>
-<td>Revisar chat</td>
+<td>1h</td>
+<td class="command">/mute %player% 1h Toxicidad</td>
+<td class="obs">Reincidencia aumenta</td>
 </tr>
 
 <tr>
 <td>Publicidad</td>
-<td>7d</td>
-<td class="command">/ban %player% 7d Publicidad</td>
-<td>Sin advertencia</td>
+<td>3d</td>
+<td class="command">/ban %player% 3d Publicidad</td>
+<td class="obs">Sin advertencia</td>
 </tr>
 
 <tr>
 <td>Ban Evading</td>
-<td>Perm</td>
-<td class="command">/ban %player% Perm BanEvading</td>
-<td>Evadir sanción activa</td>
+<td>7d → 15d → 30d → Perm</td>
+<td class="command">/ban %player%</td>
+<td class="obs">Evade sanción activa</td>
 </tr>
 
 <tr>
-<td>Uso de Hacks (1ra vez)</td>
-<td>14d</td>
-<td class="command">/ban %player% 14d Hacks</td>
-<td>Requiere pruebas claras</td>
-</tr>
-
-<tr>
-<td>Uso de Hacks (2da vez)</td>
-<td>30d</td>
-<td class="command">/ban %player% 30d ReincidenciaHacks</td>
-<td>Duplicar tiempo</td>
-</tr>
-
-<tr>
-<td>Uso de Hacks (3ra vez)</td>
-<td>60d</td>
-<td class="command">/ban %player% 60d ReincidenciaHacks</td>
-<td>Última sanción temporal</td>
-</tr>
-
-<tr>
-<td>Uso de Hacks (4ta vez)</td>
-<td>Perm</td>
-<td class="command">/ban %player% Perm Hacks</td>
-<td>Reincidencia máxima</td>
-</tr>
-
-<tr>
-<td>Grief Lobby</td>
-<td>Perm</td>
-<td class="command">/ban %player% Perm Grief</td>
-<td>Daño grave al servidor</td>
+<td>Uso de Hacks</td>
+<td>7d → 14d → 30d → Perm</td>
+<td class="command">/ban %player%</td>
+<td class="obs">Requiere pruebas + SS</td>
 </tr>
 
 <tr>
 <td>Negarse a SS</td>
-<td>30d</td>
-<td class="command">/ban %player% 30d SSRefusal</td>
-<td>Si abandona estando congelado</td>
+<td>14d</td>
+<td class="command">/ban %player% 14d SSRefusal</td>
+<td class="obs">Salir congelado</td>
 </tr>
 
 <tr>
 <td>Salir en SS</td>
 <td>Perm</td>
 <td class="command">/ban %player% Perm LoggedSS</td>
-<td>Evadir revisión</td>
+<td class="obs">Evadir revisión</td>
 </tr>
 
 <tr>
 <td>Eliminar pruebas</td>
-<td>60d</td>
-<td class="command">/ban %player% 60d SSDelete</td>
-<td>Borrar archivos / mods</td>
+<td>30d</td>
+<td class="command">/ban %player% 30d SSDelete</td>
+<td class="obs">Borrar mods / archivos</td>
 </tr>
 
 <tr>
-<td>Uso de bypass en SS</td>
+<td>Grief Lobby</td>
 <td>Perm</td>
-<td class="command">/ban %player% Perm SSBypass</td>
-<td>Ocultar hacks</td>
+<td class="command">/ban %player% Perm Grief</td>
+<td class="obs">Daño grave al servidor</td>
 </tr>
 
 </table>
+
 </div>
 
-<!-- HCF -->
+<!-- ===== HCF ===== -->
 
 <h1 id="hcf">⚔️ HCF</h1>
 <div class="card">
+
 <table>
 <tr>
 <th>Falta</th>
@@ -303,17 +309,36 @@ Las sanciones pueden apelarse mediante el sistema oficial.
 <th>Observaciones</th>
 </tr>
 
-<tr><td>Bug Abuse</td><td>7d</td><td class="command">/ban %player% 7d BugAbuse</td><td>Clip obligatorio</td></tr>
-<tr><td>Insiding</td><td>5d</td><td class="command">/ban %player% 5d Insiding</td><td>Revisar fac</td></tr>
-<tr><td>Dupes</td><td>15d</td><td class="command">/ban %player% 15d Dupe</td><td>Reset inventario</td></tr>
+<tr>
+<td>Bug Abuse</td>
+<td>3d → 7d → Perm</td>
+<td class="command">/ban %player%</td>
+<td class="obs">Clip obligatorio</td>
+</tr>
+
+<tr>
+<td>Insiding</td>
+<td>2d → 5d → 10d</td>
+<td class="command">/ban %player%</td>
+<td class="obs">Revisar fac logs</td>
+</tr>
+
+<tr>
+<td>Dupes</td>
+<td>7d → 15d → Perm</td>
+<td class="command">/ban %player%</td>
+<td class="obs">Reset inventario</td>
+</tr>
 
 </table>
+
 </div>
 
-<!-- KITMAP -->
+<!-- ===== KITMAP ===== -->
 
 <h1 id="kitmap">🛡️ KitMap</h1>
 <div class="card">
+
 <table>
 <tr>
 <th>Falta</th>
@@ -322,17 +347,36 @@ Las sanciones pueden apelarse mediante el sistema oficial.
 <th>Observaciones</th>
 </tr>
 
-<tr><td>Teaming</td><td>3d</td><td class="command">/ban %player% 3d Teaming</td><td>Más del límite</td></tr>
-<tr><td>SpawnKill</td><td>20m</td><td class="command">/jail %player% 20m SpawnKill</td><td>Advertir</td></tr>
-<tr><td>Boost</td><td>7d</td><td class="command">/ban %player% 7d Boost</td><td>Reset stats</td></tr>
+<tr>
+<td>Teaming</td>
+<td>1d → 3d → 7d</td>
+<td class="command">/ban %player%</td>
+<td class="obs">Más del límite</td>
+</tr>
+
+<tr>
+<td>SpawnKill</td>
+<td>10m → 30m</td>
+<td class="command">/jail %player%</td>
+<td class="obs">Advertir primero</td>
+</tr>
+
+<tr>
+<td>Boost</td>
+<td>3d → 7d → 15d</td>
+<td class="command">/ban %player%</td>
+<td class="obs">Reset stats</td>
+</tr>
 
 </table>
+
 </div>
 
-<!-- UHC -->
+<!-- ===== UHC ===== -->
 
 <h1 id="uhc">🏹 UHC</h1>
 <div class="card">
+
 <table>
 <tr>
 <th>Falta</th>
@@ -341,25 +385,47 @@ Las sanciones pueden apelarse mediante el sistema oficial.
 <th>Observaciones</th>
 </tr>
 
-<tr><td>CrossTeam</td><td>15d</td><td class="command">/ban %player% 15d CrossTeam</td><td>Revisar POV</td></tr>
-<tr><td>Ghosting</td><td>7d</td><td class="command">/ban %player% 7d Ghosting</td><td>Logs chat</td></tr>
-<tr><td>Xray</td><td>Perm</td><td class="command">/ban %player% Perm Xray</td><td>No apelable evidente</td></tr>
+<tr>
+<td>CrossTeam</td>
+<td>7d → 15d → Perm</td>
+<td class="command">/ban %player%</td>
+<td class="obs">Revisar POV</td>
+</tr>
+
+<tr>
+<td>Ghosting</td>
+<td>3d → 7d</td>
+<td class="command">/ban %player%</td>
+<td class="obs">Logs chat</td>
+</tr>
+
+<tr>
+<td>Xray</td>
+<td>14d → 30d → Perm</td>
+<td class="command">/ban %player%</td>
+<td class="obs">SS obligatoria</td>
+</tr>
 
 </table>
+
 </div>
 
-<!-- APELACIONES -->
+<!-- ===== APELACIONES ===== -->
 
-<h1 id="apelaciones">📩 Formato de Apelación</h1>
+<h1 id="apelaciones">📩 Apelaciones</h1>
 <div class="card apelacion">
+
 <b>Usuario:</b><br>
 <b>Nick:</b><br>
 <b>Sanción:</b><br>
 <b>Tiempo:</b><br>
+<b>Modalidad:</b><br>
 <b>Motivo:</b><br>
+<b>¿Acepta SS?:</b><br>
 <b>Pruebas:</b><br>
 <b>Staff que sancionó:</b><br>
 <b>Resolución:</b>
+
 </div>
 
 </div>
