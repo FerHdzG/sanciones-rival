@@ -2,164 +2,275 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Sanciones | Rival Latam</title>
+<title>Guía Staff • Rival</title>
+
 <style>
 body{
-    margin:0;
-    font-family:Arial, Helvetica, sans-serif;
-    background:#0f0f0f;
-    color:white;
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#0b0b0b;
+color:white;
+display:flex;
 }
 
-header{
-    background:#8b0000;
-    padding:20px;
-    text-align:center;
-    font-size:28px;
-    font-weight:bold;
-    letter-spacing:2px;
+/* SIDEBAR */
+
+.sidebar{
+width:260px;
+background:#111;
+height:100vh;
+padding:20px;
+box-shadow:2px 0 10px #000;
+position:fixed;
+overflow:auto;
 }
 
-.container{
-    padding:20px;
-    max-width:1100px;
-    margin:auto;
+.logo{
+text-align:center;
+margin-bottom:20px;
 }
 
-.server-title{
-    margin-top:40px;
-    font-size:22px;
-    border-left:5px solid #8b0000;
-    padding-left:10px;
+.logo img{
+width:120px;
+transition:.3s;
 }
+
+.logo img:hover{
+transform:scale(1.1);
+filter:drop-shadow(0 0 10px red);
+}
+
+.menu h3{
+color:red;
+margin-top:20px;
+font-size:14px;
+text-transform:uppercase;
+}
+
+.menu a{
+display:block;
+color:#ccc;
+text-decoration:none;
+padding:8px;
+border-radius:6px;
+transition:.2s;
+font-size:14px;
+}
+
+.menu a:hover{
+background:red;
+color:white;
+}
+
+/* CONTENIDO */
+
+.content{
+margin-left:260px;
+padding:40px;
+flex:1;
+animation:fadeIn 1s;
+}
+
+.section{
+margin-bottom:50px;
+animation:slideUp .6s;
+}
+
+h1{
+color:red;
+border-bottom:2px solid red;
+padding-bottom:10px;
+}
+
+/* TABLA */
 
 table{
-    width:100%;
-    border-collapse:collapse;
-    margin-top:15px;
-    background:#1a1a1a;
-}
-
-th, td{
-    padding:12px;
-    text-align:center;
-    border:1px solid #333;
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
 }
 
 th{
-    background:#8b0000;
+background:red;
+padding:10px;
+}
+
+td{
+background:#151515;
+padding:10px;
+border-bottom:1px solid #222;
+text-align:center;
 }
 
 tr:hover{
-    background:#262626;
+background:#1f1f1f;
+transform:scale(1.01);
+transition:.2s;
 }
 
-footer{
-    text-align:center;
-    padding:20px;
-    margin-top:40px;
-    background:#111;
-    font-size:14px;
+/* ANIMACIONES */
+
+@keyframes fadeIn{
+from{opacity:0}
+to{opacity:1}
+}
+
+@keyframes slideUp{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 </style>
 </head>
+
 <body>
 
-<header>
-Sistema de Sanciones | Rival Latam
-</header>
+<!-- SIDEBAR -->
 
-<div class="container">
+<div class="sidebar">
 
-<!-- HCF -->
-<div class="server-title">HCF</div>
+<div class="logo">
+<img src="logo.png">
+</div>
+
+<div class="menu">
+
+<h3>Guía Staff</h3>
+<a href="#inicio">Bienvenida</a>
+
+<h3>Sanciones</h3>
+<a href="#generales">Generales</a>
+<a href="#hcf">HCF</a>
+<a href="#kitmap">KitMap</a>
+<a href="#uhc">UHC</a>
+
+</div>
+</div>
+
+<!-- CONTENIDO -->
+
+<div class="content">
+
+<!-- BIENVENIDA -->
+
+<div id="inicio" class="section">
+<h1>Bienvenido al Staff</h1>
+<p>
+Esta guía contiene todas las sanciones oficiales de Rival Network.
+Todo staff debe seguir estos tiempos y comandos obligatoriamente.
+</p>
+</div>
+
+<!-- GENERALES -->
+
+<div id="generales" class="section">
+<h1>Sanciones Generales</h1>
+
 <table>
 <tr>
-<th>Infracción</th>
-<th>Sanción</th>
-<th>Duración</th>
+<th>Falta</th>
+<th>Tipo</th>
+<th>Tiempo</th>
+<th>Comando</th>
+<th>Observación</th>
 </tr>
 
 <tr>
-<td>Uso de Hacks</td>
-<td>Ban Permanente</td>
-<td>Permanente</td>
+<td>Spam</td>
+<td>Mute</td>
+<td>30m</td>
+<td>/mute %player% 30m Spam</td>
+<td>Escalar si reincide</td>
+</tr>
+
+<tr>
+<td>Insultos</td>
+<td>Mute</td>
+<td>1h</td>
+<td>/mute %player% 1h Insultos</td>
+<td>Depende gravedad</td>
+</tr>
+
+</table>
+</div>
+
+<!-- HCF -->
+
+<div id="hcf" class="section">
+<h1>Sanciones HCF</h1>
+
+<table>
+<tr>
+<th>Falta</th>
+<th>Tipo</th>
+<th>Tiempo</th>
+<th>Comando</th>
+<th>Observación</th>
+</tr>
+
+<tr>
+<td>Uso de bugs</td>
+<td>Ban</td>
+<td>7d</td>
+<td>/ban %player% 7d Bug Abuse</td>
+<td>Pruebas obligatorias</td>
+</tr>
+</table>
+</div>
+
+<!-- KITMAP -->
+
+<div id="kitmap" class="section">
+<h1>Sanciones KitMap</h1>
+
+<table>
+<tr>
+<th>Falta</th>
+<th>Tipo</th>
+<th>Tiempo</th>
+<th>Comando</th>
+<th>Observación</th>
 </tr>
 
 <tr>
 <td>Teaming</td>
 <td>Ban</td>
-<td>7 Días</td>
-</tr>
-
-<tr>
-<td>Toxicidad</td>
-<td>Mute</td>
-<td>12 Horas</td>
+<td>3d</td>
+<td>/ban %player% 3d Teaming</td>
+<td>Solo si excede límite</td>
 </tr>
 </table>
-
-<!-- KITMAP -->
-<div class="server-title">KitMap</div>
-<table>
-<tr>
-<th>Infracción</th>
-<th>Sanción</th>
-<th>Duración</th>
-</tr>
-
-<tr>
-<td>Uso de Hacks</td>
-<td>Ban Permanente</td>
-<td>Permanente</td>
-</tr>
-
-<tr>
-<td>SpawnKill Abusivo</td>
-<td>Ban</td>
-<td>3 Días</td>
-</tr>
-
-<tr>
-<td>Flood / Spam</td>
-<td>Mute</td>
-<td>6 Horas</td>
-</tr>
-</table>
-
-<!-- UHC -->
-<div class="server-title">UHC</div>
-<table>
-<tr>
-<th>Infracción</th>
-<th>Sanción</th>
-<th>Duración</th>
-</tr>
-
-<tr>
-<td>CrossTeam</td>
-<td>Ban</td>
-<td>15 Días</td>
-</tr>
-
-<tr>
-<td>Uso de Hacks</td>
-<td>Ban Permanente</td>
-<td>Permanente</td>
-</tr>
-
-<tr>
-<td>Logout en Combate</td>
-<td>Ban</td>
-<td>2 Días</td>
-</tr>
-</table>
-
 </div>
 
-<footer>
-© 2026 Rival Latam — Todos los derechos reservados
-</footer>
+<!-- UHC -->
 
+<div id="uhc" class="section">
+<h1>Sanciones UHC</h1>
+
+<table>
+<tr>
+<th>Falta</th>
+<th>Tipo</th>
+<th>Tiempo</th>
+<th>Comando</th>
+<th>Observación</th>
+</tr>
+
+<tr>
+<td>Cross Team</td>
+<td>Ban</td>
+<td>15d</td>
+<td>/ban %player% 15d CrossTeam</td>
+<td>Revisar clips</td>
+</tr>
+</table>
+</div>
+
+</div>
 </body>
 </html>
