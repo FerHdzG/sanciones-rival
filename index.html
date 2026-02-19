@@ -17,9 +17,9 @@
 body{
   display:flex;
   background:
-    radial-gradient(circle at 20% 30%, rgba(255,0,0,0.15), transparent 40%),
-    radial-gradient(circle at 80% 70%, rgba(255,0,0,0.10), transparent 40%),
-    linear-gradient(135deg,#000000,#120000,#000000);
+    radial-gradient(circle at 50% 0%, rgba(255,0,0,0.25), transparent 60%),
+    radial-gradient(circle at 0% 100%, rgba(120,0,0,0.25), transparent 60%),
+    linear-gradient(180deg,#000000 0%,#0a0000 40%,#150000 70%,#000000 100%);
   color:white;
 }
 
@@ -33,7 +33,7 @@ body{
   left:0;
   top:0;
   border-right:2px solid #ff0000;
-  box-shadow:0 0 20px #ff0000, inset 0 0 20px rgba(255,0,0,0.1);
+  box-shadow:0 0 25px #ff0000, inset 0 0 20px rgba(255,0,0,0.15);
 }
 
 .logo{
@@ -94,7 +94,7 @@ body{
   font-size:42px;
   margin-bottom:40px;
   color:#ff2a2a;
-  text-shadow:0 0 8px #ff0000, 0 0 15px #ff0000;
+  text-shadow:0 0 10px #ff0000, 0 0 20px #990000;
   letter-spacing:2px;
 }
 
@@ -118,6 +118,7 @@ body{
   color:#ff2a2a;
   text-align:center;
   font-size:28px;
+  text-shadow:0 0 10px red;
 }
 
 table{
@@ -132,7 +133,6 @@ th{
   padding:14px;
   text-align:center;
   text-transform:uppercase;
-  letter-spacing:1px;
 }
 
 td{
@@ -170,10 +170,11 @@ tr:hover td{
 <div id="bienvenida" class="title">🌟 Bienvenido al Staff</div>
 <div class="modalidad">
 <p style="text-align:center; line-height:1.6;">
-Bienvenido al equipo de <b>Rival LATAM</b>.  
-⚖️ Aplica sanciones con criterio.  
-🛡️ Protege la experiencia competitiva.  
-📋 Sigue siempre la escala progresiva.
+Bienvenido al equipo de <b>Rival LATAM</b>.<br><br>
+⚖️ Aplica sanciones con criterio.<br>
+🛡️ Protege la competitividad.<br>
+📋 Sigue siempre la escala progresiva.<br>
+🚫 Cero favoritismos.
 </p>
 </div>
 
@@ -195,7 +196,7 @@ Bienvenido al equipo de <b>Rival LATAM</b>.
 <div id="modalidades" class="title">⚔️ Sanciones por Modalidad</div>
 
 <div class="modalidad">
-<h2>HCF</h2>
+<h2>⚔️ HCF</h2>
 <table>
 <tr><th>Sanción</th><th>Tiempo</th></tr>
 <tr><td>Insiding</td><td>5d → 10d → Perm</td></tr>
@@ -209,63 +210,53 @@ Bienvenido al equipo de <b>Rival LATAM</b>.
 </table>
 </div>
 
-<div class="modalidad">
-<h2>KitMap</h2>
-<table>
-<tr><th>Sanción</th><th>Tiempo</th></tr>
-<tr><td>Teaming Ilegal</td><td>3d → 7d</td></tr>
-<tr><td>SpawnKill Abusivo</td><td>12h → 1d → 3d</td></tr>
-<tr><td>Bug Abuse</td><td>2d → 5d</td></tr>
-<tr><td>Refill Macro</td><td>2d → 10d</td></tr>
-<tr><td>FFA CrossTeam</td><td>1d → 3d</td></tr>
-<tr><td>Warp Combat Log</td><td>6h → 1d</td></tr>
-<tr><td>Kill Boosting</td><td>5d → 14d</td></tr>
-<tr><td>Stat Abuse</td><td>7d → Perm</td></tr>
-</table>
-</div>
-
-<div class="modalidad">
-<h2>UHC</h2>
-<table>
-<tr><th>Sanción</th><th>Tiempo</th></tr>
-<tr><td>CrossTeam</td><td>15d → Perm</td></tr>
-<tr><td>Clean Fight</td><td>2h → 12h</td></tr>
-<tr><td>Skybase Ilegal</td><td>1d → 3d</td></tr>
-<tr><td>Teaming</td><td>10d → Perm</td></tr>
-<tr><td>Spec Info</td><td>2d → 7d</td></tr>
-<tr><td>Border Abuse</td><td>4h → 1d</td></tr>
-<tr><td>Trap Ilegal</td><td>2d → 5d</td></tr>
-<tr><td>Game Throwing</td><td>7d → Perm</td></tr>
-</table>
-</div>
-
 <div id="ss" class="title">🧊 SS / Congelados</div>
 <div class="modalidad">
 <p style="text-align:center; line-height:1.6;">
-1️⃣ Congelar jugador  
-2️⃣ Mover a canal de revisión  
-3️⃣ Revisar logs y mods  
-4️⃣ Evade SS → Perm  
+1️⃣ Congelar jugador<br>
+2️⃣ Mover a canal de revisión<br>
+3️⃣ Revisar logs y mods<br>
+4️⃣ Evade SS → Perm<br>
 5️⃣ Limpio → Unfreeze
 </p>
 </div>
 
 <div id="jerarquia" class="title">👑 Jerarquía Staff</div>
+
 <div class="modalidad">
-<p style="text-align:center; line-height:1.8;">
-Owner<br>Manager<br>Admin<br>Mod+<br>Mod<br>Helper
-</p>
+<h2>🏆 Owner</h2>
+<p style="text-align:center;">🔴 Máxima autoridad y decisión final.</p>
 </div>
 
-<div id="observaciones" class="title">📩 Observaciones</div>
 <div class="modalidad">
-<p style="text-align:center; line-height:1.6;">
-Usuario:<br>
-Motivo:<br>
-Tiempo aplicado:<br>
-Staff responsable:<br>
-Pruebas:<br>
-Resolución final:
+<h2>⚡ Manager</h2>
+<p style="text-align:center;">🧠 Gestión del staff y temporadas.</p>
+</div>
+
+<div class="modalidad">
+<h2>🔥 Admin</h2>
+<p style="text-align:center;">📋 Apelaciones y sanciones mayores.</p>
+</div>
+
+<div class="modalidad">
+<h2>⚔️ Moderator+</h2>
+<p style="text-align:center;">🧊 Realizar SS y aplicar sanciones completas.</p>
+</div>
+
+<div class="modalidad">
+<h2>🛡️ Moderator</h2>
+<p style="text-align:center;">🚫 Control de chat y faltas menores.</p>
+</div>
+
+<div class="modalidad">
+<h2>📈 Criterios de Promote</h2>
+<p style="text-align:center; line-height:1.8;">
+⏳ Actividad constante<br>
+📋 Buen uso de escalas<br>
+📸 Pruebas claras<br>
+🧠 Buen criterio<br>
+🚫 0 abusos<br><br>
+⚠️ El promote es por rendimiento, no por tiempo.
 </p>
 </div>
 
