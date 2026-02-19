@@ -17,23 +17,21 @@
 body{
   display:flex;
   background:
-    radial-gradient(circle at 50% 0%, rgba(255,0,0,0.25), transparent 60%),
-    radial-gradient(circle at 0% 100%, rgba(120,0,0,0.25), transparent 60%),
-    linear-gradient(180deg,#000000 0%,#0a0000 40%,#150000 70%,#000000 100%);
-  color:white;
+    radial-gradient(circle at 20% 10%, rgba(120,0,0,0.15), transparent 50%),
+    linear-gradient(180deg,#000000 0%,#0d0d0d 50%,#000000 100%);
+  color:#e6e6e6;
 }
 
 /* SIDEBAR */
 .sidebar{
   width:260px;
   height:100vh;
-  background:linear-gradient(180deg,#000000,#1a0000);
+  background:linear-gradient(180deg,#000000,#111111);
   padding:20px;
   position:fixed;
   left:0;
   top:0;
-  border-right:2px solid #ff0000;
-  box-shadow:0 0 25px #ff0000, inset 0 0 20px rgba(255,0,0,0.15);
+  border-right:1px solid #2a2a2a;
 }
 
 .logo{
@@ -42,21 +40,15 @@ body{
 }
 
 .logo img{
-  width:120px;
-  filter:drop-shadow(0 0 10px red);
-  animation:float 4s ease-in-out infinite;
-}
-
-@keyframes float{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-6px)}
+  width:110px;
+  opacity:0.9;
 }
 
 .sidebar h2{
   text-align:center;
   margin-bottom:25px;
-  color:#ff2a2a;
-  text-shadow:0 0 10px red;
+  color:#8b0000;
+  font-weight:bold;
 }
 
 .sidebar ul{
@@ -67,19 +59,19 @@ body{
   display:block;
   padding:12px;
   margin:10px 0;
-  background:#0a0a0a;
-  border-radius:10px;
+  background:#111111;
+  border-radius:8px;
   transition:.3s;
-  color:white;
+  color:#cccccc;
   text-decoration:none;
-  border-left:4px solid #330000;
+  border-left:3px solid transparent;
 }
 
 .sidebar ul li a:hover{
-  background:#ff0000;
-  border-left:4px solid white;
-  box-shadow:0 0 15px red;
-  transform:translateX(6px);
+  background:#1a1a1a;
+  border-left:3px solid #8b0000;
+  color:white;
+  transform:translateX(4px);
 }
 
 /* CONTENT */
@@ -91,59 +83,56 @@ body{
 
 .title{
   text-align:center;
-  font-size:42px;
+  font-size:38px;
   margin-bottom:40px;
-  color:#ff2a2a;
-  text-shadow:0 0 10px #ff0000, 0 0 20px #990000;
-  letter-spacing:2px;
+  color:#bbbbbb;
+  letter-spacing:1px;
 }
 
 .modalidad{
   margin-bottom:50px;
-  background:#050505;
+  background:#111111;
   padding:25px;
-  border-radius:20px;
-  border:1px solid #330000;
-  box-shadow:0 0 20px rgba(255,0,0,0.1), inset 0 0 15px rgba(255,0,0,0.05);
-  transition:0.4s;
+  border-radius:12px;
+  border:1px solid #1f1f1f;
+  transition:0.3s;
 }
 
 .modalidad:hover{
-  transform:translateY(-5px);
-  box-shadow:0 0 25px rgba(255,0,0,0.4), 0 0 50px rgba(255,0,0,0.2);
+  background:#151515;
 }
 
 .modalidad h2{
   margin-bottom:20px;
-  color:#ff2a2a;
+  color:#8b0000;
   text-align:center;
-  font-size:28px;
-  text-shadow:0 0 10px red;
+  font-size:26px;
 }
 
 table{
   width:100%;
   border-collapse:collapse;
-  border-radius:15px;
+  border-radius:10px;
   overflow:hidden;
 }
 
 th{
-  background:linear-gradient(90deg,#ff0000,#990000);
+  background:#1a1a1a;
   padding:14px;
   text-align:center;
-  text-transform:uppercase;
+  color:#8b0000;
+  border-bottom:1px solid #2a2a2a;
 }
 
 td{
   padding:12px;
   text-align:center;
-  background:#050505;
-  border-bottom:1px solid #1a1a1a;
+  background:#111111;
+  border-bottom:1px solid #1f1f1f;
 }
 
 tr:hover td{
-  background:#1a0000;
+  background:#151515;
 }
 </style>
 </head>
@@ -223,30 +212,11 @@ Bienvenido al equipo de <b>Rival LATAM</b>.<br><br>
 
 <div id="jerarquia" class="title">👑 Jerarquía Staff</div>
 
-<div class="modalidad">
-<h2>🏆 Owner</h2>
-<p style="text-align:center;">🔴 Máxima autoridad y decisión final.</p>
-</div>
-
-<div class="modalidad">
-<h2>⚡ Manager</h2>
-<p style="text-align:center;">🧠 Gestión del staff y temporadas.</p>
-</div>
-
-<div class="modalidad">
-<h2>🔥 Admin</h2>
-<p style="text-align:center;">📋 Apelaciones y sanciones mayores.</p>
-</div>
-
-<div class="modalidad">
-<h2>⚔️ Moderator+</h2>
-<p style="text-align:center;">🧊 Realizar SS y aplicar sanciones completas.</p>
-</div>
-
-<div class="modalidad">
-<h2>🛡️ Moderator</h2>
-<p style="text-align:center;">🚫 Control de chat y faltas menores.</p>
-</div>
+<div class="modalidad"><h2>🏆 Owner</h2><p style="text-align:center;">Máxima autoridad y decisión final.</p></div>
+<div class="modalidad"><h2>⚡ Manager</h2><p style="text-align:center;">Gestión del staff y temporadas.</p></div>
+<div class="modalidad"><h2>🔥 Admin</h2><p style="text-align:center;">Apelaciones y sanciones mayores.</p></div>
+<div class="modalidad"><h2>⚔️ Moderator+</h2><p style="text-align:center;">Realizar SS y aplicar sanciones completas.</p></div>
+<div class="modalidad"><h2>🛡️ Moderator</h2><p style="text-align:center;">Control de chat y faltas menores.</p></div>
 
 <div class="modalidad">
 <h2>📈 Criterios de Promote</h2>
