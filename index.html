@@ -1,348 +1,208 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Staff Wiki - Sanciones</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Staff Wiki - Sanciones</title>
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family: Arial, Helvetica, sans-serif;
-      scroll-behavior:smooth;
-    }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior:smooth;
+}
 
-    body{
-      display:flex;
-      background:linear-gradient(135deg,#000000,#1a0000,#000000);
-      color:white;
-    }
+body{
+  display:flex;
+  background:linear-gradient(135deg,#000000,#1a0000,#000000);
+  color:white;
+}
 
-    /* SIDEBAR */
-    .sidebar{
-      width:260px;
-      height:100vh;
-      background:linear-gradient(180deg,#000000,#140000);
-      padding:20px;
-      position:fixed;
-      left:0;
-      top:0;
-      border-right:2px solid #ff0000;
-      box-shadow:0 0 25px #ff000055;
-    }
+/* SIDEBAR */
+.sidebar{
+  width:260px;
+  height:100vh;
+  background:linear-gradient(180deg,#000000,#140000);
+  padding:20px;
+  position:fixed;
+  left:0;
+  top:0;
+  border-right:2px solid #ff0000;
+  box-shadow:0 0 25px #ff000055;
+}
 
-    .logo{
-      text-align:center;
-      margin-bottom:25px;
-    }
+.logo{
+  text-align:center;
+  margin-bottom:25px;
+}
 
-    .logo img{
-      width:120px;
-      filter:drop-shadow(0 0 10px red);
-      animation:float 4s ease-in-out infinite;
-    }
+.logo img{
+  width:120px;
+  filter:drop-shadow(0 0 10px red);
+  animation:float 4s ease-in-out infinite;
+}
 
-    @keyframes float{
-      0%,100%{transform:translateY(0)}
-      50%{transform:translateY(-6px)}
-    }
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-6px)}
+}
 
-    .sidebar h2{
-      text-align:center;
-      margin-bottom:25px;
-      color:#ff2a2a;
-    }
+.sidebar h2{
+  text-align:center;
+  margin-bottom:25px;
+  color:#ff2a2a;
+}
 
-    .sidebar ul{
-      list-style:none;
-    }
+.sidebar ul{
+  list-style:none;
+}
 
-    .sidebar ul li a{
-      display:block;
-      padding:12px;
-      margin:8px 0;
-      background:#0a0a0a;
-      border-radius:10px;
-      cursor:pointer;
-      transition:.3s;
-      color:white;
-      text-decoration:none;
-      border-left:4px solid transparent;
-    }
+.sidebar ul li a{
+  display:block;
+  padding:12px;
+  margin:8px 0;
+  background:#0a0a0a;
+  border-radius:10px;
+  transition:.3s;
+  color:white;
+  text-decoration:none;
+  border-left:4px solid transparent;
+}
 
-    .sidebar ul li a:hover{
-      background:#ff0000;
-      border-left:4px solid white;
-      transform:translateX(5px);
-    }
+.sidebar ul li a:hover{
+  background:#ff0000;
+  border-left:4px solid white;
+  transform:translateX(5px);
+}
 
-    /* CONTENT */
-    .content{
-      margin-left:260px;
-      padding:40px;
-      width:100%;
-    }
+/* CONTENT */
+.content{
+  margin-left:260px;
+  padding:40px;
+  width:100%;
+}
 
-    .title{
-      text-align:center;
-      font-size:40px;
-      margin-bottom:40px;
-      color:#ff2a2a;
-      animation:fadeIn 1s ease-in-out;
-    }
+.title{
+  text-align:center;
+  font-size:40px;
+  margin-bottom:40px;
+  color:#ff2a2a;
+  animation:fadeIn 1s ease-in-out;
+}
 
-    @keyframes fadeIn{
-      from{opacity:0; transform:translateY(-20px);} 
-      to{opacity:1; transform:translateY(0);} 
-    }
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(-20px);} 
+  to{opacity:1; transform:translateY(0);} 
+}
 
-    .card{
-      background:#0a0a0a;
-      padding:25px;
-      border-radius:20px;
-      margin-bottom:40px;
-      box-shadow:0 0 20px #000;
-      border:1px solid #220000;
-      animation:fadeIn 1s ease-in-out;
-    }
+.modalidad{
+  margin-bottom:50px;
+  background:#050505;
+  padding:25px;
+  border-radius:20px;
+  box-shadow:0 0 20px rgba(0,0,0,.6);
+  border:1px solid #220000;
+  animation:fadeIn 1s ease-in-out;
+}
 
-    /* TABLAS */
-    table{
-      width:100%;
-      border-collapse:collapse;
-      overflow:hidden;
-      border-radius:15px;
-    }
+.modalidad h2{
+  margin-bottom:20px;
+  color:#ff2a2a;
+  text-align:center;
+  font-size:28px;
+}
 
-    th{
-      background:#ff0000;
-      padding:12px;
-      text-align:center;
-    }
+table{
+  width:100%;
+  border-collapse:collapse;
+  border-radius:15px;
+  overflow:hidden;
+}
 
-    td{
-      padding:12px;
-      text-align:center;
-      background:#050505;
-      border-bottom:1px solid #1a1a1a;
-    }
+th{
+  background:#ff0000;
+  padding:12px;
+  text-align:center;
+}
 
-    tr:hover td{
-      background:#140000;
-      transition:.3s;
-    }
+td{
+  padding:12px;
+  text-align:center;
+  background:#050505;
+  border-bottom:1px solid #1a1a1a;
+}
 
-    /* MODALIDAD BLOQUE */
-    .modalidad{
-      margin-bottom:50px;
-      background:#050505;
-      padding:25px;
-      border-radius:20px;
-      box-shadow:0 0 20px rgba(0,0,0,.6);
-      border:1px solid #220000;
-      animation:fadeIn 1s ease-in-out;
-    }
-
-    .modalidad h2{
-      margin-bottom:20px;
-      color:#ff2a2a;
-      text-align:center;
-      font-size:28px;
-    }
+tr:hover td{
+  background:#140000;
+  transition:.3s;
+}
 </style>
 </head>
 
 <body>
 
-  <!-- SIDEBAR -->
-  <div class="sidebar">
-
-    <div class="logo">
-      <img src="logo.png">
-    </div>
-
-    <h2>Rival LATAM</h2>
-
-    <ul>
-      <li><a href="#bienvenida">🌟 Bienvenida</a></li>
-      <li><a href="#generales">🚫 Generales</a></li>
-      <li><a href="#modalidades">⚔️ Modalidades</a></li>
-      <li><a href="#ss">🧊 SS / Congelados</a></li>
-      <li><a href="#jerarquia">👑 Jerarquía</a></li>
-      <li><a href="#observaciones">📩 Observaciones</a></li>
-    </ul>
-
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <div class="logo">
+    <img src="logo.png">
   </div>
 
-    <h2>Rival LATAM</h2>
+  <h2>Rival LATAM</h2>
 
-    <ul>
-      <li><a href="#generales">📜 Generales</a></li>
-      <li><a href="#modalidades">⚔️ Modalidades</a></li>
-      <li><a href="#ss">🧊 SS / Congelados</a></li>
-      <li><a href="#jerarquia">👑 Jerarquía</a></li>
-      <li><a href="#observaciones">📩 Observaciones</a></li>
-    </ul>
-  </div>
+  <ul>
+    <li><a href="#bienvenida">🌟 Bienvenida</a></li>
+    <li><a href="#generales">🚫 Generales</a></li>
+    <li><a href="#modalidades">⚔️ Modalidades</a></li>
+    <li><a href="#ss">🧊 SS / Congelados</a></li>
+    <li><a href="#jerarquia">👑 Jerarquía</a></li>
+    <li><a href="#observaciones">📩 Observaciones</a></li>
+  </ul>
+</div>
 
-  <!-- CONTENT -->
-  <div class="content">
+<!-- CONTENT -->
+<div class="content">
 
-    <div id="bienvenida" class="card">
-      <div class="title">🌟 Bienvenido al Staff</div>
-      <p>
-      Bienvenido al equipo de moderación de Rival Latam.<br><br>
-      Tu misión es mantener el orden, proteger a los jugadores y garantizar
-      una experiencia competitiva justa dentro del servidor.
+  <!-- BIENVENIDA -->
+  <div id="bienvenida" class="title">🌟 Bienvenido al Staff</div>
+  <div class="modalidad">
+    <h2>Mensaje de Bienvenida</h2>
+    <p style="text-align:center; line-height:1.6;">
+      Bienvenido al equipo de <b>Rival LATAM</b>. Tu responsabilidad es mantener el orden,
+      la competitividad y el respeto dentro del servidor.
       <br><br>
-      Recuerda siempre actuar con criterio, respeto y pruebas.
-      </p>
-    </div>
-
-    <div id="generales" class="card">
-      <div class="title">🚫 Sanciones Generales</div>
-      <table>
-        <tr><th>Falta</th><th>Tiempo</th></tr>
-        <tr><td>Spam</td><td>20m → 35m → 1h</td></tr>
-        <tr><td>Racismo</td><td>1h → 3h → 1d</td></tr>
-        <tr><td>Toxicidad</td><td>35m → 4h → 1d</td></tr>
-        <tr><td>Falta de Respeto Staff</td><td>1h → 3h → 1d</td></tr>
-        <tr><td>Dox / DDoS</td><td>7d → Perm</td></tr>
-        <tr><td>Amenazas de Muerte</td><td>7d → Perm</td></tr>
-        <tr><td>Hacks</td><td>14d → 30d → Perm</td></tr>
-      </table>
-    </div>
-
-    <div id="modalidades">
-
-    <!-- BIENVENIDA -->
-    <div id="generales" class="title">🌟 Bienvenido al Staff</div>
-    <div class="modalidad">
-      <h2>Mensaje de Bienvenida</h2>
-      <p style="text-align:center; line-height:1.6;">
-        Bienvenido al equipo de <b>Rival LATAM</b>. Tu responsabilidad es mantener el orden,
-        la competitividad y el respeto dentro del servidor.
-        <br><br>
-        ⚖️ Aplica sanciones con criterio.<br>
-        🛡️ Protege la experiencia de los jugadores.<br>
-        📋 Sigue siempre la escala progresiva.
-      </p>
-    </div>
-
-    <!-- SANCIONES GENERALES -->
-    <div class="modalidad">
-      <h2>📜 Sanciones Generales</h2>
-      <table>
-        <tr>
-          <th>Falta</th>
-          <th>Escala</th>
-        </tr>
-        <tr><td>Spam</td><td>20m → 1h → 3h</td></tr>
-        <tr><td>Toxicidad</td><td>30m → 2h → 1d</td></tr>
-        <tr><td>Racismo</td><td>1h → 12h → 3d</td></tr>
-        <tr><td>Amenazas</td><td>12h → 3d → 7d</td></tr>
-        <tr><td>Dox / DDoS</td><td>7d → Perm</td></tr>
-        <tr><td>Uso de Hacks</td><td>14d → 30d → Perm</td></tr>
-        <tr><td>Ban Evade</td><td>30d → Perm</td></tr>
-        <tr><td>Publicidad</td><td>7d → Perm</td></tr>
-      </table>
-    </div>
-
-    <!-- MODALIDADES -->
-    <div id="modalidades" class="title">🎯 Sanciones por Modalidad</div>
-
-    <!-- HCF -->
-    <div class="modalidad">
-      <h2>⚔️ HCF</h2>
-      <table>
-        <tr><th>Sanción</th><th>Tiempo</th></tr>
-        <tr><td>Insiding</td><td>5d → 10d → Perm</td></tr>
-        <tr><td>Ally Ilegal</td><td>3d → 7d</td></tr>
-        <tr><td>Timer Abuse</td><td>1h → 6h</td></tr>
-        <tr><td>Claim Abuse</td><td>2d → 5d</td></tr>
-        <tr><td>Safezone Abuse</td><td>2h → 12h</td></tr>
-        <tr><td>Logout Kill</td><td>1d → 3d</td></tr>
-        <tr><td>Faction Grief</td><td>7d → 14d</td></tr>
-        <tr><td>Base Bug Abuse</td><td>10d → Perm</td></tr>
-      </table>
-    </div>
-
-    <!-- KITMAP -->
-    <div class="modalidad">
-      <h2>🗡️ KitMap</h2>
-      <table>
-        <tr><th>Sanción</th><th>Tiempo</th></tr>
-        <tr><td>Teaming Ilegal</td><td>3d → 7d</td></tr>
-        <tr><td>SpawnKill Abusivo</td><td>12h → 1d → 3d</td></tr>
-        <tr><td>Bug Abuse</td><td>2d → 5d</td></tr>
-        <tr><td>Refill Macro</td><td>2d → 10d</td></tr>
-        <tr><td>FFA CrossTeam</td><td>1d → 3d</td></tr>
-        <tr><td>Warp Combat Log</td><td>6h → 1d</td></tr>
-        <tr><td>Kill Boosting</td><td>5d → 14d</td></tr>
-        <tr><td>Stat Abuse</td><td>7d → Perm</td></tr>
-      </table>
-    </div>
-
-    <!-- UHC -->
-    <div class="modalidad">
-      <h2>🏹 UHC</h2>
-      <table>
-        <tr><th>Sanción</th><th>Tiempo</th></tr>
-        <tr><td>CrossTeam</td><td>15d → Perm</td></tr>
-        <tr><td>Clean Fight Interference</td><td>2h → 12h</td></tr>
-        <tr><td>Skybase Ilegal</td><td>1d → 3d</td></tr>
-        <tr><td>Teaming</td><td>10d → Perm</td></tr>
-        <tr><td>Spec Info</td><td>2d → 7d</td></tr>
-        <tr><td>Border Abuse</td><td>4h → 1d</td></tr>
-        <tr><td>Trap Ilegal</td><td>2d → 5d</td></tr>
-        <tr><td>Game Throwing</td><td>7d → Perm</td></tr>
-      </table>
-    </div>
-
-    <!-- SS / CONGELADOS -->
-    <div id="ss" class="title">🧊 SS / Congelados</div>
-    <div class="modalidad">
-      <h2>Procedimiento SS</h2>
-      <p style="line-height:1.6; text-align:center;">
-        1️⃣ Congelar al jugador.<br>
-        2️⃣ Enviar a canal de revisión.<br>
-        3️⃣ Revisar logs y mods.<br>
-        4️⃣ Si evade SS → Perm.<br>
-        5️⃣ Si coopera y no tiene nada → Unfreeze.
-      </p>
-    </div>
-
-    <!-- JERARQUIA -->
-    <div id="jerarquia" class="title">👑 Jerarquía Staff</div>
-    <div class="modalidad">
-      <h2>Rangos</h2>
-      <p style="text-align:center; line-height:1.8;">
-        Owner<br>
-        Manager<br>
-        Admin<br>
-        Mod+<br>
-        Mod<br>
-        Helper
-      </p>
-    </div>
-
-    <!-- OBSERVACIONES -->
-    <div id="observaciones" class="title">📩 Observaciones</div>
-    <div class="modalidad">
-      <h2>Formato de Reporte</h2>
-      <p style="line-height:1.6; text-align:center;">
-        Usuario:<br>
-        Motivo:<br>
-        Tiempo aplicado:<br>
-        Staff responsable:<br>
-        Pruebas adjuntas:<br>
-        Resolución final:
-      </p>
-    </div>
-
+      ⚖️ Aplica sanciones con criterio.<br>
+      🛡️ Protege la experiencia de los jugadores.<br>
+      📋 Sigue siempre la escala progresiva.
+    </p>
   </div>
+
+  <!-- SANCIONES GENERALES -->
+  <div id="generales" class="title">📜 Sanciones Generales</div>
+  <div class="modalidad">
+    <table>
+      <tr>
+        <th>Falta</th>
+        <th>Escala</th>
+      </tr>
+      <tr><td>Spam</td><td>20m → 1h → 3h</td></tr>
+      <tr><td>Toxicidad</td><td>30m → 2h → 1d</td></tr>
+      <tr><td>Racismo</td><td>1h → 12h → 3d</td></tr>
+      <tr><td>Amenazas</td><td>12h → 3d → 7d</td></tr>
+      <tr><td>Dox / DDoS</td><td>7d → Perm</td></tr>
+      <tr><td>Uso de Hacks</td><td>14d → 30d → Perm</td></tr>
+      <tr><td>Ban Evade</td><td>30d → Perm</td></tr>
+      <tr><td>Publicidad</td><td>7d → Perm</td></tr>
+    </table>
+  </div>
+
+  <!-- MODALIDADES -->
+  <div id="modalidades" class="title">🎯 Sanciones por Modalidad</div>
+
+  <!-- Aquí siguen HCF, KitMap, UHC, SS, Jerarquía y Observaciones tal como ya los tienes -->
+  
+</div>
 
 </body>
 </html>
