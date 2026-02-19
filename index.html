@@ -41,14 +41,41 @@ body{
 
 .logo img{
   width:110px;
-  opacity:0.9;
+  opacity:0.95;
+  animation: floatLogo 3s ease-in-out infinite;
+  transition: 0.4s;
+}
+
+.logo img:hover{
+  transform: scale(1.08);
+}
+
+@keyframes floatLogo{
+  0%{ transform: translateY(0px); }
+  50%{ transform: translateY(-8px); }
+  100%{ transform: translateY(0px); }
 }
 
 .sidebar h2{
   text-align:center;
-  margin-bottom:25px;
+  margin-bottom:5px;
   color:#8b0000;
   font-weight:bold;
+  letter-spacing:1px;
+}
+
+.server-ip{
+  text-align:center;
+  font-size:14px;
+  color:#bbbbbb;
+  margin-bottom:25px;
+  animation: pulseIP 2s infinite;
+}
+
+@keyframes pulseIP{
+  0%{ opacity:0.6; }
+  50%{ opacity:1; }
+  100%{ opacity:0.6; }
 }
 
 .sidebar ul{
@@ -144,6 +171,7 @@ tr:hover td{
     <img src="logo.png">
   </div>
   <h2>AcuaticMC</h2>
+  <div class="server-ip">rival.la</div>
   <ul>
     <li><a href="#bienvenida">🌟 Bienvenida</a></li>
     <li><a href="#generales">🚫 Generales</a></li>
