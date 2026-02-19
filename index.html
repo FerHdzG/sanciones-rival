@@ -13,8 +13,8 @@ margin:0;
 font-family:Arial, Helvetica, sans-serif;
 background:linear-gradient(135deg,#0a0a0a,#111);
 color:white;
-display:flex;
 }
+
 
 /* ====== SIDEBAR ====== */
 
@@ -24,9 +24,13 @@ background:#0d0d0d;
 height:100vh;
 padding:20px 15px;
 position:fixed;
+left:0;
+top:0;
 box-shadow:2px 0 15px #000;
 border-right:1px solid #1f1f1f;
+z-index:10;
 }
+
 
 .logo{
 text-align:center;
@@ -71,11 +75,12 @@ padding-left:14px;
 /* ====== CONTENIDO ====== */
 
 .content{
-margin-left:240px;
-padding:30px 40px;
-width:100%;
-max-width:1100px;
+margin-left:260px;
+padding:40px 20px;
+max-width:1000px;
+margin-right:auto;
 }
+
 
 h1{
 color:#ff2a2a;
@@ -132,6 +137,144 @@ line-height:1.7;
 
 .apelacion b{
 color:#ff3b3b;
+}
+
+
+
+/* ===== GITBOOK STYLE EXTRA ===== */
+
+.content{
+margin-left:260px;
+padding:50px 40px;
+max-width:950px;
+}
+
+.card{
+background:linear-gradient(135deg,#141414,#1a1a1a);
+padding:20px;
+border-radius:12px;
+margin-bottom:40px;
+box-shadow:0 0 18px rgba(0,0,0,.6);
+border:1px solid #262626;
+animation:fadeUp .7s ease;
+}
+
+h1{
+color:#ff2a2a;
+margin-bottom:14px;
+font-size:24px;
+border-bottom:2px solid #222;
+padding-bottom:8px;
+animation:fadeIn .8s ease;
+}
+
+/* ===== TABLAS GITBOOK ===== */
+
+table{
+width:100%;
+border-collapse:collapse;
+font-size:13px;
+background:#121212;
+border-radius:10px;
+overflow:hidden;
+animation:fadeUp .9s ease;
+}
+
+th{
+background:linear-gradient(90deg,#ff2a2a,#b30000);
+padding:12px;
+font-size:13px;
+letter-spacing:.5px;
+}
+
+td{
+background:#181818;
+padding:11px;
+border-bottom:1px solid #242424;
+text-align:center;
+transition:.2s;
+}
+
+tr:hover td{
+background:#202020;
+transform:scale(1.01);
+}
+
+/* ===== SIDEBAR GITBOOK ===== */
+
+.sidebar{
+width:240px;
+background:linear-gradient(180deg,#0d0d0d,#111);
+height:100vh;
+padding:20px 15px;
+position:fixed;
+left:0;
+top:0;
+box-shadow:2px 0 20px #000;
+border-right:1px solid #1f1f1f;
+animation:fadeIn .7s ease;
+}
+
+.menu a{
+display:block;
+color:#bbb;
+text-decoration:none;
+padding:9px 10px;
+font-size:13px;
+border-radius:6px;
+margin-bottom:4px;
+transition:.25s;
+}
+
+.menu a:hover{
+background:linear-gradient(90deg,#ff2a2a,#ff4d4d);
+color:white;
+padding-left:16px;
+box-shadow:0 0 10px rgba(255,0,0,.4);
+}
+
+/* ===== BIENVENIDA PRO ===== */
+
+.bienvenida{
+font-size:15px;
+line-height:1.9;
+background:linear-gradient(135deg,#141414,#191919);
+border:1px solid #2a2a2a;
+box-shadow:0 0 22px #000;
+animation:fadeUp 1s ease;
+}
+
+.bienvenida p{
+margin-bottom:18px;
+}
+
+.bienvenida b{
+color:#ff3b3b;
+}
+
+/* ===== LOGO ANIMADO EXTRA ===== */
+
+.logo img{
+width:115px;
+animation:logoFloat 4s ease-in-out infinite, glow 3s ease-in-out infinite;
+filter:drop-shadow(0 0 10px red);
+}
+
+@keyframes glow{
+0%,100%{filter:drop-shadow(0 0 8px red)}
+50%{filter:drop-shadow(0 0 18px #ff2a2a)}
+}
+
+/* ===== ANIMACIONES ===== */
+
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(30px)}
+to{opacity:1;transform:translateY(0)}
+}
+
+@keyframes fadeIn{
+from{opacity:0}
+to{opacity:1}
 }
 
 </style>
