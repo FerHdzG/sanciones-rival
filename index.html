@@ -2,188 +2,106 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Guía Staff • Rival</title>
+<title>Guía de Sanciones • Rival</title>
 
 <style>
 
-/* 🌌 Fondo animado suave */
-body {
-  background: radial-gradient(circle at 20% 20%, #1a0000, #0b0b0b 60%);
-  background-attachment: fixed;
-  animation: fondoGlow 12s ease-in-out infinite alternate;
-}
-
-@keyframes fondoGlow {
-  0% { background-position: left top; filter: brightness(1); }
-  100% { background-position: right bottom; filter: brightness(1.15); }
-}
-
-/* ✨ Partículas suaves */
-body::before {
-  content: "";
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: url('https://i.imgur.com/8bKQX7E.png');
-  opacity: 0.05;
-  animation: particlesMove 60s linear infinite;
-  pointer-events: none;
-}
-
-@keyframes particlesMove {
-  from { transform: translateY(0); }
-  to { transform: translateY(-1000px); }
-}
-
-/* 🦊 Animación logo mejorada */
-.logo {
-  animation: floatLogo 4s ease-in-out infinite, glowLogo 2.5s ease-in-out infinite alternate;
-}
-
-@keyframes floatLogo {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-
-@keyframes glowLogo {
-  from { filter: drop-shadow(0 0 5px #ff0000); }
-  to { filter: drop-shadow(0 0 18px #ff0000); }
-}
+/* ====== ESTILO GENERAL SIMPLE ====== */
 
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
-background:linear-gradient(135deg,#050505,#0d0d0d);
+background:linear-gradient(135deg,#0a0a0a,#111);
 color:white;
 display:flex;
 }
 
-/* SIDEBAR */
+/* ====== SIDEBAR ====== */
 
 .sidebar{
-width:270px;
-background:linear-gradient(180deg,#0a0a0a,#111);
+width:220px;
+background:#0d0d0d;
 height:100vh;
 padding:20px;
-box-shadow:2px 0 20px #000;
 position:fixed;
-overflow:auto;
-animation:fadeIn .8s;
 }
 
 .logo{
 text-align:center;
-margin-bottom:25px;
+margin-bottom:20px;
 }
 
 .logo img{
-width:140px;
-transition:.4s;
-filter:drop-shadow(0 0 8px red);
-animation:floatLogo 3s ease-in-out infinite, glowLogo 2s infinite alternate;
+width:110px;
+animation:logoFloat 4s ease-in-out infinite;
+filter:drop-shadow(0 0 10px red);
 }
 
-.logo img:hover{
-transform:scale(1.12);
-filter:drop-shadow(0 0 25px red);
-}
-
-@keyframes floatLogo{
-0%{transform:translateY(0)}
-50%{transform:translateY(-12px)}
-100%{transform:translateY(0)}
-}
-
-@keyframes glowLogo{
-from{filter:drop-shadow(0 0 6px #ff0000)}
-to{filter:drop-shadow(0 0 22px #ff0000)}
-}
-
-.logo img:hover{
-transform:scale(1.08);
-filter:drop-shadow(0 0 18px red);
+@keyframes logoFloat{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-6px)}
 }
 
 .menu h3{
 color:#ff2a2a;
-margin-top:25px;
-font-size:13px;
-text-transform:uppercase;
-letter-spacing:1px;
+font-size:12px;
+margin-top:20px;
 }
 
 .menu a{
 display:block;
 color:#bbb;
 text-decoration:none;
-padding:10px;
-border-radius:8px;
-transition:.25s;
-font-size:14px;
+padding:8px;
+font-size:13px;
+border-radius:6px;
 }
 
 .menu a:hover{
-background:linear-gradient(90deg,red,#ff3b3b);
+background:#ff2a2a;
 color:white;
-transform:translateX(5px);
 }
 
-/* CONTENT */
+/* ====== CONTENIDO ====== */
 
 .content{
-margin-left:270px;
-padding:50px;
-flex:1;
-animation:fadeIn 1s;
-}
-
-.section{
-margin-bottom:70px;
-animation:slideUp .7s;
+margin-left:220px;
+padding:30px;
+width:100%;
+max-width:1100px;
 }
 
 h1{
 color:#ff2a2a;
-border-bottom:2px solid #ff2a2a;
-padding-bottom:10px;
-margin-bottom:25px;
+margin-bottom:15px;
+font-size:22px;
 }
 
 .card{
-background:#111;
-padding:20px;
-border-radius:14px;
-box-shadow:0 0 15px #000;
+background:#141414;
+padding:18px;
+border-radius:10px;
+margin-bottom:40px;
 }
 
-/* TABLE */
+/* ====== TABLAS ====== */
 
 table{
 width:100%;
 border-collapse:collapse;
-margin-top:15px;
-overflow:hidden;
-border-radius:12px;
-}
-
-th{
-background:linear-gradient(90deg,#ff1a1a,#b30000);
-padding:12px;
-font-size:14px;
-}
-
-td{
-background:#161616;
-padding:12px;
-border-bottom:1px solid #222;
-text-align:center;
 font-size:13px;
 }
 
-tr:hover td{
-background:#1f1f1f;
-transform:scale(1.01);
-transition:.2s;
+th{
+background:#ff2a2a;
+padding:10px;
+}
+
+td{
+background:#1b1b1b;
+padding:10px;
+border-bottom:1px solid #222;
+text-align:center;
 }
 
 .command{
@@ -191,33 +109,24 @@ color:#ff4d4d;
 font-family:monospace;
 }
 
-/* SCROLL */
-::-webkit-scrollbar{
-width:8px;
+/* ====== APELACIONES SIMPLE ====== */
+
+.apelacion{
+font-size:13px;
+line-height:1.7;
 }
 
-::-webkit-scrollbar-thumb{
-background:red;
-border-radius:10px;
+.apelacion b{
+color:#ff3b3b;
 }
 
-/* ANIMATIONS */
-
-@keyframes fadeIn{
-from{opacity:0}
-to{opacity:1}
-}
-
-@keyframes slideUp{
-from{opacity:0;transform:translateY(40px)}
-to{opacity:1;transform:translateY(0)}
-}
 </style>
 </head>
 
 <body>
 
-<!-- SIDEBAR -->
+<!-- ====== SIDEBAR ====== -->
+
 <div class="sidebar">
 
 <div class="logo">
@@ -226,176 +135,124 @@ to{opacity:1;transform:translateY(0)}
 
 <div class="menu">
 
-<h3>Guía Staff</h3>
-<a href="#inicio">Bienvenida</a>
+<h3>Guía</h3>
+<a href="#inicio">🎮 Bienvenida</a>
 
 <h3>Sanciones</h3>
-<a href="#generales">Generales</a>
-<a href="#hcf">HCF</a>
-<a href="#kitmap">KitMap</a>
-<a href="#uhc">UHC</a>
+<a href="#generales">🚫 Generales</a>
+<a href="#hcf">⚔️ HCF</a>
+<a href="#kitmap">🛡️ KitMap</a>
+<a href="#uhc">🏹 UHC</a>
+<a href="#apelaciones">📩 Apelaciones</a>
 
 </div>
 </div>
 
-<!-- CONTENT -->
+<!-- ====== CONTENIDO ====== -->
+
 <div class="content">
 
 <!-- BIENVENIDA -->
-<div id="inicio" class="section">
-<h1>Bienvenido al Staff</h1>
+
+<h1 id="inicio">🎮 Bienvenido al Staff</h1>
 <div class="card">
-<p>
-Esta guía contiene todas las sanciones oficiales de Rival Network.<br>
-Todo staff debe seguir estos tiempos y comandos obligatoriamente.<br><br>
-El incumplimiento de esta normativa puede resultar en sanciones internas.<br><br>
-<b>Recuerda siempre:</b><br>
-• Tener pruebas antes de sancionar.<br>
-• Usar el comando correcto.<br>
+Guía oficial de sanciones de Rival Network.<br><br>
+• Todas las sanciones requieren pruebas.<br>
 • Escalar reincidencias.<br>
-• Mantener profesionalismo.<br>
-• No abusar de permisos staff.<br><br>
-<b>Apelaciones:</b><br>
-Todas las sanciones pueden ser apeladas únicamente mediante el sistema oficial del servidor con pruebas válidas.
-</p>
-</div>
+• No abusar de permisos.<br>
+• Usar comandos correctos.<br><br>
+Las sanciones pueden apelarse con pruebas válidas.
 </div>
 
 <!-- GENERALES -->
-<div id="generales" class="section">
-<h1>Sanciones Generales</h1>
+
+<h1 id="generales">🚫 Sanciones Generales</h1>
 <div class="card">
 <table>
 <tr>
 <th>Falta</th>
-<th>Tipo</th>
 <th>Tiempo</th>
 <th>Comando</th>
-<th>Observación</th>
 </tr>
 
-<tr><td>Spam / Flood</td><td>Mute</td><td>30m</td><td class="command">/mute %player% 30m Spam</td><td>Escalar si reincide</td></tr>
-<tr><td>Insultos</td><td>Mute</td><td>1h</td><td class="command">/mute %player% 1h Insultos</td><td>Depende gravedad</td></tr>
-<tr><td>Toxicidad</td><td>Mute</td><td>3h</td><td class="command">/mute %player% 3h Toxicidad</td><td>Chat review</td></tr>
-<tr><td>Acoso</td><td>Mute</td><td>6h</td><td class="command">/mute %player% 6h Acoso</td><td>Pruebas</td></tr>
-<tr><td>Publicidad</td><td>Ban</td><td>7d</td><td class="command">/ban %player% 7d Publicidad</td><td>Sin advertencia</td></tr>
-<tr><td>Suplantación</td><td>Ban</td><td>15d</td><td class="command">/ban %player% 15d Suplantación</td><td>Nick + skin</td></tr>
-<tr><td>Amenazas</td><td>Ban</td><td>30d</td><td class="command">/ban %player% 30d Amenazas</td><td>Grave</td></tr>
-<tr><td>Uso de hacks comprobados</td><td>Ban</td><td>Perm</td><td class="command">/ban %player% Perm Hacks</td><td>No apelable si es evidente</td></tr>
-<tr><td>Grief al Lobby / Spawn</td><td>Ban</td><td>Perm</td><td class="command">/ban %player% Perm GriefLobby</td><td>Daño grave al servidor</td></tr>
-<tr><td>DDOS / Amenazas reales</td><td>Ban</td><td>Perm</td><td class="command">/ban %player% Perm DDOS</td><td>Reporte administrativo</td></tr>
+<tr><td>Spam</td><td>30m</td><td class="command">/mute %player% 30m Spam</td></tr>
+<tr><td>Insultos</td><td>1h</td><td class="command">/mute %player% 1h Insultos</td></tr>
+<tr><td>Toxicidad</td><td>3h</td><td class="command">/mute %player% 3h Toxicidad</td></tr>
+<tr><td>Publicidad</td><td>7d</td><td class="command">/ban %player% 7d Publicidad</td></tr>
+<tr><td>Hacks</td><td>Perm</td><td class="command">/ban %player% Perm Hacks</td></tr>
+<tr><td>Grief Lobby</td><td>Perm</td><td class="command">/ban %player% Perm Grief</td></tr>
 
-<tr><td>AutoClicker extremo</td><td>Ban</td><td>Perm</td><td class="command">/ban %player% Perm AutoClicker</td><td>Logs + pruebas</td></tr>
-<tr><td>Evasión de sanción</td><td>Ban</td><td>30d</td><td class="command">/ban %player% 30d Evade</td><td>Duplicar tiempo</td></tr>
 </table>
-</div>
 </div>
 
 <!-- HCF -->
-<div id="hcf" class="section">
-<h1>Sanciones HCF</h1>
+
+<h1 id="hcf">⚔️ HCF</h1>
 <div class="card">
 <table>
 <tr>
 <th>Falta</th>
-<th>Tipo</th>
 <th>Tiempo</th>
 <th>Comando</th>
-<th>Observación</th>
 </tr>
 
-<tr><td>Bug Abuse</td><td>Ban</td><td>7d</td><td class="command">/ban %player% 7d BugAbuse</td><td>Clip obligatorio</td></tr>
-<tr><td>Dupes</td><td>Ban</td><td>15d</td><td class="command">/ban %player% 15d Dupe</td><td>Reset inv</td></tr>
-<tr><td>Insideo</td><td>Ban</td><td>5d</td><td class="command">/ban %player% 5d Insideo</td><td>Revisar fac</td></tr>
-<tr><td>Timer en PvP</td><td>Jail</td><td>30m</td><td class="command">/jail %player% 30m TimerAbuse</td><td>Advertir</td></tr>
-<tr><td>Ally ilegal</td><td>Ban</td><td>3d</td><td class="command">/ban %player% 3d AllyIlegal</td><td>Pruebas</td></tr>
-<tr><td>Grief de facción</td><td>Ban</td><td>7d</td><td class="command">/ban %player% 7d FacGrief</td><td>Rollback</td></tr>
-<tr><td>Uso de alts en fac</td><td>Ban</td><td>5d</td><td class="command">/ban %player% 5d AltAbuse</td><td>Kick fac</td></tr>
+<tr><td>Bug Abuse</td><td>7d</td><td class="command">/ban %player% 7d BugAbuse</td></tr>
+<tr><td>Insiding</td><td>5d</td><td class="command">/ban %player% 5d Insiding</td></tr>
+<tr><td>Dupes</td><td>15d</td><td class="command">/ban %player% 15d Dupe</td></tr>
 
 </table>
-</div>
 </div>
 
 <!-- KITMAP -->
-<div id="kitmap" class="section">
-<h1>Sanciones KitMap</h1>
+
+<h1 id="kitmap">🛡️ KitMap</h1>
 <div class="card">
 <table>
 <tr>
 <th>Falta</th>
-<th>Tipo</th>
 <th>Tiempo</th>
 <th>Comando</th>
-<th>Observación</th>
 </tr>
 
-<tr><td>Teaming excesivo</td><td>Ban</td><td>3d</td><td class="command">/ban %player% 3d Teaming</td><td>Más del límite</td></tr>
-<tr><td>Spawn Kill</td><td>Jail</td><td>20m</td><td class="command">/jail %player% 20m SpawnKill</td><td>Advertir</td></tr>
-<tr><td>Boost ilegal</td><td>Ban</td><td>7d</td><td class="command">/ban %player% 7d Boost</td><td>Stats wipe</td></tr>
-<tr><td>Uso de glitches</td><td>Ban</td><td>5d</td><td class="command">/ban %player% 5d Glitch</td><td>Clip</td></tr>
-<tr><td>KillAura / Reach</td><td>Ban</td><td>Perm</td><td class="command">/ban %player% Perm PvPHacks</td><td>No apelable si es evidente</td></tr>
-<tr><td>Farming ilegal de stats</td><td>Ban</td><td>7d</td><td class="command">/ban %player% 7d StatAbuse</td><td>Reset stats</td></tr>
+<tr><td>Teaming</td><td>3d</td><td class="command">/ban %player% 3d Teaming</td></tr>
+<tr><td>SpawnKill</td><td>20m</td><td class="command">/jail %player% 20m SpawnKill</td></tr>
+<tr><td>Boost</td><td>7d</td><td class="command">/ban %player% 7d Boost</td></tr>
 
 </table>
-</div>
 </div>
 
 <!-- UHC -->
-<div id="uhc" class="section">
-<h1>Sanciones UHC</h1>
+
+<h1 id="uhc">🏹 UHC</h1>
 <div class="card">
 <table>
 <tr>
 <th>Falta</th>
-<th>Tipo</th>
 <th>Tiempo</th>
 <th>Comando</th>
-<th>Observación</th>
 </tr>
 
-<tr><td>Cross Team</td><td>Ban</td><td>15d</td><td class="command">/ban %player% 15d CrossTeam</td><td>Revisar POV</td></tr>
-<tr><td>Ghosting</td><td>Ban</td><td>7d</td><td class="command">/ban %player% 7d Ghosting</td><td>Chat logs</td></tr>
-<tr><td>Teaming</td><td>Ban</td><td>10d</td><td class="command">/ban %player% 10d Teaming</td><td>Clip</td></tr>
-<tr><td>Uso de Xray</td><td>Ban</td><td>Perm</td><td class="command">/ban %player% Perm Xray</td><td>No apelable si es evidente</td></tr>
-<tr><td>Hacks en meetup</td><td>Ban</td><td>Perm</td><td class="command">/ban %player% Perm UhcHacks</td><td>Pruebas obligatorias</td></tr>
-<tr><td>Filtración de coords</td><td>Ban</td><td>10d</td><td class="command">/ban %player% 10d CoordsLeak</td><td>Chat review</td></tr>
+<tr><td>CrossTeam</td><td>15d</td><td class="command">/ban %player% 15d CrossTeam</td></tr>
+<tr><td>Ghosting</td><td>7d</td><td class="command">/ban %player% 7d Ghosting</td></tr>
+<tr><td>Xray</td><td>Perm</td><td class="command">/ban %player% Perm Xray</td></tr>
 
 </table>
 </div>
+
+<!-- APELACIONES -->
+
+<h1 id="apelaciones">📩 Formato de Apelación</h1>
+<div class="card apelacion">
+<b>Usuario:</b><br>
+<b>Nick:</b><br>
+<b>Sanción:</b><br>
+<b>Tiempo:</b><br>
+<b>Motivo:</b><br>
+<b>Pruebas:</b><br>
+<b>Staff que sancionó:</b><br>
+<b>Resolución:</b>
 </div>
 
 </div>
-
-
-<!-- 📋 Formato de Atención de Apelaciones -->
-<section class="appeal-format">
-  <h2>📋 Formato para Atender una Apelación</h2>
-  <div class="card">
-    <p><strong>👤 Usuario:</strong> __________________________</p>
-    <p><strong>🆔 ID / Nick:</strong> __________________________</p>
-    <p><strong>📅 Fecha de sanción:</strong> __________________</p>
-    <p><strong>📌 Tipo de sanción:</strong> __________________</p>
-    <p><strong>⏱️ Duración:</strong> __________________________</p>
-    <p><strong>👮 Staff que sancionó:</strong> ________________</p>
-    <p><strong>📝 Motivo:</strong> ____________________________</p>
-    <p><strong>📂 Pruebas presentadas:</strong></p>
-    <ul>
-      <li>🎥 Video</li>
-      <li>🖼️ Capturas</li>
-      <li>📜 Logs</li>
-    </ul>
-    <p><strong>🧠 Revisión del Staff:</strong></p>
-    <p>______________________________________________</p>
-    <p>______________________________________________</p>
-    <p><strong>📊 Decisión Final:</strong></p>
-    <ul>
-      <li>✅ Aprobada</li>
-      <li>❌ Rechazada</li>
-      <li>➖ Reducida</li>
-    </ul>
-    <p><strong>✍️ Firma Staff:</strong> ______________________</p>
-  </div>
-</section>
-
 </body>
 </html>
