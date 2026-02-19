@@ -8,7 +8,7 @@
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
-background:#0b0b0b;
+background:linear-gradient(135deg,#050505,#0d0d0d);
 color:white;
 display:flex;
 }
@@ -16,99 +16,130 @@ display:flex;
 /* SIDEBAR */
 
 .sidebar{
-width:260px;
-background:#111;
+width:270px;
+background:linear-gradient(180deg,#0a0a0a,#111);
 height:100vh;
 padding:20px;
-box-shadow:2px 0 10px #000;
+box-shadow:2px 0 20px #000;
 position:fixed;
 overflow:auto;
+animation:fadeIn .8s;
 }
 
 .logo{
 text-align:center;
-margin-bottom:20px;
+margin-bottom:25px;
 }
 
 .logo img{
-width:120px;
-transition:.3s;
+width:140px;
+transition:.4s;
+filter:drop-shadow(0 0 8px red);
 }
 
 .logo img:hover{
-transform:scale(1.1);
-filter:drop-shadow(0 0 10px red);
+transform:scale(1.08);
+filter:drop-shadow(0 0 18px red);
 }
 
 .menu h3{
-color:red;
-margin-top:20px;
-font-size:14px;
+color:#ff2a2a;
+margin-top:25px;
+font-size:13px;
 text-transform:uppercase;
+letter-spacing:1px;
 }
 
 .menu a{
 display:block;
-color:#ccc;
+color:#bbb;
 text-decoration:none;
-padding:8px;
-border-radius:6px;
-transition:.2s;
+padding:10px;
+border-radius:8px;
+transition:.25s;
 font-size:14px;
 }
 
 .menu a:hover{
-background:red;
+background:linear-gradient(90deg,red,#ff3b3b);
 color:white;
+transform:translateX(5px);
 }
 
-/* CONTENIDO */
+/* CONTENT */
 
 .content{
-margin-left:260px;
-padding:40px;
+margin-left:270px;
+padding:50px;
 flex:1;
 animation:fadeIn 1s;
 }
 
 .section{
-margin-bottom:50px;
-animation:slideUp .6s;
+margin-bottom:70px;
+animation:slideUp .7s;
 }
 
 h1{
-color:red;
-border-bottom:2px solid red;
+color:#ff2a2a;
+border-bottom:2px solid #ff2a2a;
 padding-bottom:10px;
+margin-bottom:25px;
 }
 
-/* TABLA */
+.card{
+background:#111;
+padding:20px;
+border-radius:14px;
+box-shadow:0 0 15px #000;
+}
+
+/* TABLE */
 
 table{
 width:100%;
 border-collapse:collapse;
-margin-top:20px;
+margin-top:15px;
+overflow:hidden;
+border-radius:12px;
 }
 
 th{
-background:red;
-padding:10px;
+background:linear-gradient(90deg,#ff1a1a,#b30000);
+padding:12px;
+font-size:14px;
 }
 
 td{
-background:#151515;
-padding:10px;
+background:#161616;
+padding:12px;
 border-bottom:1px solid #222;
 text-align:center;
+font-size:13px;
 }
 
-tr:hover{
+tr:hover td{
 background:#1f1f1f;
 transform:scale(1.01);
 transition:.2s;
 }
 
-/* ANIMACIONES */
+.command{
+color:#ff4d4d;
+font-family:monospace;
+}
+
+/* SCROLL */
+::-webkit-scrollbar{
+width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+background:red;
+border-radius:10px;
+}
+
+/* ANIMATIONS */
 
 @keyframes fadeIn{
 from{opacity:0}
@@ -116,14 +147,8 @@ to{opacity:1}
 }
 
 @keyframes slideUp{
-from{
-opacity:0;
-transform:translateY(30px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
+from{opacity:0;transform:translateY(40px)}
+to{opacity:1;transform:translateY(0)}
 }
 </style>
 </head>
@@ -131,7 +156,6 @@ transform:translateY(0);
 <body>
 
 <!-- SIDEBAR -->
-
 <div class="sidebar">
 
 <div class="logo">
@@ -152,25 +176,24 @@ transform:translateY(0);
 </div>
 </div>
 
-<!-- CONTENIDO -->
-
+<!-- CONTENT -->
 <div class="content">
 
 <!-- BIENVENIDA -->
-
 <div id="inicio" class="section">
 <h1>Bienvenido al Staff</h1>
+<div class="card">
 <p>
-Esta guía contiene todas las sanciones oficiales de Rival Network.
+Esta guía contiene todas las sanciones oficiales de Rival Network.<br>
 Todo staff debe seguir estos tiempos y comandos obligatoriamente.
 </p>
 </div>
+</div>
 
 <!-- GENERALES -->
-
 <div id="generales" class="section">
 <h1>Sanciones Generales</h1>
-
+<div class="card">
 <table>
 <tr>
 <th>Falta</th>
@@ -180,30 +203,23 @@ Todo staff debe seguir estos tiempos y comandos obligatoriamente.
 <th>Observación</th>
 </tr>
 
-<tr>
-<td>Spam</td>
-<td>Mute</td>
-<td>30m</td>
-<td>/mute %player% 30m Spam</td>
-<td>Escalar si reincide</td>
-</tr>
-
-<tr>
-<td>Insultos</td>
-<td>Mute</td>
-<td>1h</td>
-<td>/mute %player% 1h Insultos</td>
-<td>Depende gravedad</td>
-</tr>
+<tr><td>Spam / Flood</td><td>Mute</td><td>30m</td><td class="command">/mute %player% 30m Spam</td><td>Escalar si reincide</td></tr>
+<tr><td>Insultos</td><td>Mute</td><td>1h</td><td class="command">/mute %player% 1h Insultos</td><td>Depende gravedad</td></tr>
+<tr><td>Toxicidad</td><td>Mute</td><td>3h</td><td class="command">/mute %player% 3h Toxicidad</td><td>Chat review</td></tr>
+<tr><td>Acoso</td><td>Mute</td><td>6h</td><td class="command">/mute %player% 6h Acoso</td><td>Pruebas</td></tr>
+<tr><td>Publicidad</td><td>Ban</td><td>7d</td><td class="command">/ban %player% 7d Publicidad</td><td>Sin advertencia</td></tr>
+<tr><td>Suplantación</td><td>Ban</td><td>15d</td><td class="command">/ban %player% 15d Suplantación</td><td>Nick + skin</td></tr>
+<tr><td>Amenazas</td><td>Ban</td><td>30d</td><td class="command">/ban %player% 30d Amenazas</td><td>Grave</td></tr>
+<tr><td>Uso de hacks</td><td>Ban</td><td>Perm</td><td class="command">/ban %player% Perm Hacks</td><td>Blacklist</td></tr>
 
 </table>
+</div>
 </div>
 
 <!-- HCF -->
-
 <div id="hcf" class="section">
 <h1>Sanciones HCF</h1>
-
+<div class="card">
 <table>
 <tr>
 <th>Falta</th>
@@ -213,21 +229,20 @@ Todo staff debe seguir estos tiempos y comandos obligatoriamente.
 <th>Observación</th>
 </tr>
 
-<tr>
-<td>Uso de bugs</td>
-<td>Ban</td>
-<td>7d</td>
-<td>/ban %player% 7d Bug Abuse</td>
-<td>Pruebas obligatorias</td>
-</tr>
+<tr><td>Bug Abuse</td><td>Ban</td><td>7d</td><td class="command">/ban %player% 7d BugAbuse</td><td>Clip obligatorio</td></tr>
+<tr><td>Dupes</td><td>Ban</td><td>15d</td><td class="command">/ban %player% 15d Dupe</td><td>Reset inv</td></tr>
+<tr><td>Insideo</td><td>Ban</td><td>5d</td><td class="command">/ban %player% 5d Insideo</td><td>Revisar fac</td></tr>
+<tr><td>Timer en PvP</td><td>Jail</td><td>30m</td><td class="command">/jail %player% 30m TimerAbuse</td><td>Advertir</td></tr>
+<tr><td>Ally ilegal</td><td>Ban</td><td>3d</td><td class="command">/ban %player% 3d AllyIlegal</td><td>Pruebas</td></tr>
+
 </table>
+</div>
 </div>
 
 <!-- KITMAP -->
-
 <div id="kitmap" class="section">
 <h1>Sanciones KitMap</h1>
-
+<div class="card">
 <table>
 <tr>
 <th>Falta</th>
@@ -237,21 +252,19 @@ Todo staff debe seguir estos tiempos y comandos obligatoriamente.
 <th>Observación</th>
 </tr>
 
-<tr>
-<td>Teaming</td>
-<td>Ban</td>
-<td>3d</td>
-<td>/ban %player% 3d Teaming</td>
-<td>Solo si excede límite</td>
-</tr>
+<tr><td>Teaming excesivo</td><td>Ban</td><td>3d</td><td class="command">/ban %player% 3d Teaming</td><td>Más del límite</td></tr>
+<tr><td>Spawn Kill</td><td>Jail</td><td>20m</td><td class="command">/jail %player% 20m SpawnKill</td><td>Advertir</td></tr>
+<tr><td>Boost ilegal</td><td>Ban</td><td>7d</td><td class="command">/ban %player% 7d Boost</td><td>Stats wipe</td></tr>
+<tr><td>Uso de glitches</td><td>Ban</td><td>5d</td><td class="command">/ban %player% 5d Glitch</td><td>Clip</td></tr>
+
 </table>
+</div>
 </div>
 
 <!-- UHC -->
-
 <div id="uhc" class="section">
 <h1>Sanciones UHC</h1>
-
+<div class="card">
 <table>
 <tr>
 <th>Falta</th>
@@ -261,14 +274,13 @@ Todo staff debe seguir estos tiempos y comandos obligatoriamente.
 <th>Observación</th>
 </tr>
 
-<tr>
-<td>Cross Team</td>
-<td>Ban</td>
-<td>15d</td>
-<td>/ban %player% 15d CrossTeam</td>
-<td>Revisar clips</td>
-</tr>
+<tr><td>Cross Team</td><td>Ban</td><td>15d</td><td class="command">/ban %player% 15d CrossTeam</td><td>Revisar POV</td></tr>
+<tr><td>Ghosting</td><td>Ban</td><td>7d</td><td class="command">/ban %player% 7d Ghosting</td><td>Chat logs</td></tr>
+<tr><td>Teaming</td><td>Ban</td><td>10d</td><td class="command">/ban %player% 10d Teaming</td><td>Clip</td></tr>
+<tr><td>Uso de xray</td><td>Ban</td><td>Perm</td><td class="command">/ban %player% Perm Xray</td><td>Blacklist</td></tr>
+
 </table>
+</div>
 </div>
 
 </div>
