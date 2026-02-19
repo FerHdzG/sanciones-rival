@@ -6,22 +6,14 @@
 
 <style>
 
-/* ====== FONDO ANIMADO ====== */
+/* ====== ESTILO GENERAL ====== */
 
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
 background:linear-gradient(135deg,#0a0a0a,#111);
-background-size:400% 400%;
-animation:fondo 18s ease infinite;
 color:white;
 display:flex;
-}
-
-@keyframes fondo{
-0%{background-position:0% 50%}
-50%{background-position:100% 50%}
-100%{background-position:0% 50%}
 }
 
 /* ====== SIDEBAR ====== */
@@ -44,15 +36,13 @@ margin-bottom:25px;
 .logo img{
 width:115px;
 animation:logoFloat 4s ease-in-out infinite;
-filter:drop-shadow(0 0 12px red);
+filter:drop-shadow(0 0 10px red);
 }
 
 @keyframes logoFloat{
 0%,100%{transform:translateY(0)}
 50%{transform:translateY(-6px)}
 }
-
-/* ====== MENÚ ====== */
 
 .menu h3{
 color:#ff2a2a;
@@ -95,17 +85,13 @@ border-bottom:1px solid #222;
 padding-bottom:6px;
 }
 
-/* ====== CARDS ====== */
-
 .card{
 background:#141414;
 padding:18px;
 border-radius:10px;
 margin-bottom:40px;
-box-shadow:0 0 12px #000;
+box-shadow:0 0 10px #000;
 border:1px solid #1f1f1f;
-font-size:13px;
-line-height:1.7;
 }
 
 /* ====== TABLAS ====== */
@@ -137,12 +123,12 @@ color:#ff4d4d;
 font-family:monospace;
 }
 
-.obs{
-color:#ffb3b3;
-font-size:12px;
-}
+/* ====== APELACIONES ====== */
 
-/* ====== APELACIÓN ====== */
+.apelacion{
+font-size:13px;
+line-height:1.7;
+}
 
 .apelacion b{
 color:#ff3b3b;
@@ -164,7 +150,7 @@ color:#ff3b3b;
 <div class="menu">
 
 <h3>GUÍA</h3>
-<a href="#inicio">🌟 Bienvenida</a>
+<a href="#inicio">🎮 Bienvenida</a>
 
 <h3>SANCIONES</h3>
 <a href="#generales">🚫 Generales</a>
@@ -180,127 +166,197 @@ color:#ff3b3b;
 
 <div class="content">
 
-<!-- ===== BIENVENIDA ===== -->
+<!-- BIENVENIDA -->
 
 <h1 id="inicio">🌟 Bienvenida al Staff</h1>
-<div class="card">
 
-¡Hola y bienvenido al equipo de <b>Rival</b>! 👋  
+<div class="card bienvenida">
+
+<p>
+¡Hola y bienvenido al equipo de <b>Rival</b>! 👋<br>
 Ahora formas parte de un grupo encargado de mantener el orden, la seguridad y la competitividad dentro del servidor.
+</p>
 
-🛡️ <b>Tu misión:</b>  
-• Resolver conflictos  
-• Hacer cumplir normas  
-• Proteger jugadores  
-• Mantener el respeto  
+<p>
+🛡️ <b>Tu misión como Staff:</b><br><br>
+• Resolver conflictos de manera justa.<br>
+• Hacer cumplir las normas.<br>
+• Proteger a los jugadores.<br>
+• Mantener un ambiente competitivo y respetuoso.
+</p>
 
-📜 <b>Primeros pasos:</b>  
-• Leer reglamentos  
-• Conocer comandos  
-• Entender límites de sanción  
+<p>
+📜 <b>Tus primeros pasos:</b><br><br>
+• Leer el reglamento general.<br>
+• Conocer los comandos staff.<br>
+• Entender los límites de sanción.<br>
+• Actuar siempre con criterio.
+</p>
 
-⚖️ <b>Responsabilidad:</b>  
-Ser Staff es un privilegio y una responsabilidad. Tus decisiones impactan la experiencia de todos.
+<p>
+⚖️ <b>Responsabilidad:</b><br><br>
+Ser Staff es un privilegio y una gran responsabilidad.<br>
+Tus decisiones impactan directamente la experiencia de la comunidad.
+</p>
 
-🤝 <b>No estás solo:</b>  
-Ante dudas, acude a Staff superiores o Administración.
+<p>
+🤝 <b>No estás solo:</b><br><br>
+Si tienes dudas, acude a Staff superiores o Administración.<br>
+Estamos para apoyarnos como equipo.
+</p>
 
-🔥 Hagamos de Rival un servidor legendario.
+<p>
+🔥 Hagamos de Rival un servidor legendario.<br>
+Da siempre el ejemplo y disfruta tu rol.
+</p>
 
 </div>
 
-<!-- ===== GENERALES ===== -->
+<!-- ===== JERARQUÍA STAFF ===== -->
+
+<h1 id="jerarquia">🏆 Jerarquía del Staff</h1>
+<div class="card">
+<table>
+<tr>
+<th>Tier</th>
+<th>Rango</th>
+<th>Descripción</th>
+</tr>
+
+<tr>
+<td>👑 S</td>
+<td>Owner / Founder</td>
+<td>Máxima autoridad del servidor</td>
+</tr>
+
+<tr>
+<td>💎 A+</td>
+<td>Manager</td>
+<td>Gestión general del Staff</td>
+</tr>
+
+<tr>
+<td>🔱 A</td>
+<td>Admin</td>
+<td>Supervisión total del servidor</td>
+</tr>
+
+<tr>
+<td>🛡️ B+</td>
+<td>Sr.Mod</td>
+<td>Moderación avanzada</td>
+</tr>
+
+<tr>
+<td>⚔️ B</td>
+<td>Mod</td>
+<td>Moderación general</td>
+</tr>
+
+<tr>
+<td>🧪 C</td>
+<td>Trial Mod</td>
+<td>Periodo de prueba</td>
+</tr>
+
+<tr>
+<td>🎥 Extra</td>
+<td>SS Staff</td>
+<td>Encargado de revisiones</td>
+</tr>
+
+</table>
+</div>
+<!-- GENERALES -->
 
 <h1 id="generales">🚫 Sanciones Generales</h1>
 <div class="card">
-
 <table>
 <tr>
 <th>Falta</th>
-<th>Tiempo</th>
+<th>Escala de Tiempos</th>
 <th>Comando</th>
-<th>Observaciones / Escalado</th>
+<th>Observaciones</th>
 </tr>
 
 <tr>
 <td>Spam</td>
-<td>15m</td>
-<td class="command">/mute %player% 15m Spam</td>
-<td class="obs">Escala x2 / x3 / Perm</td>
+<td>1ra: 30m • 2da: 1h • 3ra: 3h</td>
+<td class="command">/mute %player% Tiempo Spam</td>
+<td>Escalar reincidencia</td>
 </tr>
 
 <tr>
 <td>Insultos</td>
-<td>30m</td>
-<td class="command">/mute %player% 30m Insultos</td>
-<td class="obs">Depende gravedad</td>
+<td>1ra: 1h • 2da: 3h • 3ra: 6h</td>
+<td class="command">/mute %player% Tiempo Insultos</td>
+<td>Depende gravedad</td>
 </tr>
 
 <tr>
 <td>Toxicidad</td>
-<td>1h</td>
-<td class="command">/mute %player% 1h Toxicidad</td>
-<td class="obs">Reincidencia aumenta</td>
+<td>1ra: 3h • 2da: 6h • 3ra: 12h</td>
+<td class="command">/mute %player% Tiempo Toxicidad</td>
+<td>Revisar chat</td>
 </tr>
 
 <tr>
 <td>Publicidad</td>
-<td>3d</td>
-<td class="command">/ban %player% 3d Publicidad</td>
-<td class="obs">Sin advertencia</td>
+<td>1ra: 3d • 2da: 7d • 3ra: 15d</td>
+<td class="command">/ban %player% Tiempo Publicidad</td>
+<td>Sin advertencia</td>
 </tr>
 
 <tr>
 <td>Ban Evading</td>
-<td>7d → 15d → 30d → Perm</td>
-<td class="command">/ban %player%</td>
-<td class="obs">Evade sanción activa</td>
+<td>Directo: Perm</td>
+<td class="command">/ban %player% Perm BanEvading</td>
+<td>Evadir sanción activa</td>
 </tr>
 
 <tr>
 <td>Uso de Hacks</td>
-<td>7d → 14d → 30d → Perm</td>
-<td class="command">/ban %player%</td>
-<td class="obs">Requiere pruebas + SS</td>
-</tr>
-
-<tr>
-<td>Negarse a SS</td>
-<td>14d</td>
-<td class="command">/ban %player% 14d SSRefusal</td>
-<td class="obs">Salir congelado</td>
-</tr>
-
-<tr>
-<td>Salir en SS</td>
-<td>Perm</td>
-<td class="command">/ban %player% Perm LoggedSS</td>
-<td class="obs">Evadir revisión</td>
-</tr>
-
-<tr>
-<td>Eliminar pruebas</td>
-<td>30d</td>
-<td class="command">/ban %player% 30d SSDelete</td>
-<td class="obs">Borrar mods / archivos</td>
+<td>1ra: 14d • 2da: 30d • 3ra: 60d • 4ta: Perm</td>
+<td class="command">/ban %player% Tiempo Hacks</td>
+<td>Requiere pruebas claras</td>
 </tr>
 
 <tr>
 <td>Grief Lobby</td>
-<td>Perm</td>
+<td>Directo: Perm</td>
 <td class="command">/ban %player% Perm Grief</td>
-<td class="obs">Daño grave al servidor</td>
+<td>Daño grave al servidor</td>
+</tr>
+
+<tr>
+<td>Negarse a SS</td>
+<td>1ra: 30d • 2da: Perm</td>
+<td class="command">/ban %player% Tiempo SSRefusal</td>
+<td>Salir congelado</td>
+</tr>
+
+<tr>
+<td>Eliminar pruebas</td>
+<td>1ra: 60d • 2da: Perm</td>
+<td class="command">/ban %player% Tiempo SSDelete</td>
+<td>Borrar archivos</td>
+</tr>
+
+<tr>
+<td>Bypass SS</td>
+<td>Directo: Perm</td>
+<td class="command">/ban %player% Perm SSBypass</td>
+<td>Ocultar hacks</td>
 </tr>
 
 </table>
-
+</div>
 </div>
 
-<!-- ===== HCF ===== -->
+<!-- HCF -->
 
 <h1 id="hcf">⚔️ HCF</h1>
 <div class="card">
-
 <table>
 <tr>
 <th>Falta</th>
@@ -309,36 +365,17 @@ Ante dudas, acude a Staff superiores o Administración.
 <th>Observaciones</th>
 </tr>
 
-<tr>
-<td>Bug Abuse</td>
-<td>3d → 7d → Perm</td>
-<td class="command">/ban %player%</td>
-<td class="obs">Clip obligatorio</td>
-</tr>
-
-<tr>
-<td>Insiding</td>
-<td>2d → 5d → 10d</td>
-<td class="command">/ban %player%</td>
-<td class="obs">Revisar fac logs</td>
-</tr>
-
-<tr>
-<td>Dupes</td>
-<td>7d → 15d → Perm</td>
-<td class="command">/ban %player%</td>
-<td class="obs">Reset inventario</td>
-</tr>
+<tr><td>Bug Abuse</td><td>7d</td><td class="command">/ban %player% 7d BugAbuse</td><td>Clip obligatorio</td></tr>
+<tr><td>Insiding</td><td>5d</td><td class="command">/ban %player% 5d Insiding</td><td>Revisar fac</td></tr>
+<tr><td>Dupes</td><td>15d</td><td class="command">/ban %player% 15d Dupe</td><td>Reset inventario</td></tr>
 
 </table>
-
 </div>
 
-<!-- ===== KITMAP ===== -->
+<!-- KITMAP -->
 
 <h1 id="kitmap">🛡️ KitMap</h1>
 <div class="card">
-
 <table>
 <tr>
 <th>Falta</th>
@@ -347,36 +384,17 @@ Ante dudas, acude a Staff superiores o Administración.
 <th>Observaciones</th>
 </tr>
 
-<tr>
-<td>Teaming</td>
-<td>1d → 3d → 7d</td>
-<td class="command">/ban %player%</td>
-<td class="obs">Más del límite</td>
-</tr>
-
-<tr>
-<td>SpawnKill</td>
-<td>10m → 30m</td>
-<td class="command">/jail %player%</td>
-<td class="obs">Advertir primero</td>
-</tr>
-
-<tr>
-<td>Boost</td>
-<td>3d → 7d → 15d</td>
-<td class="command">/ban %player%</td>
-<td class="obs">Reset stats</td>
-</tr>
+<tr><td>Teaming</td><td>3d</td><td class="command">/ban %player% 3d Teaming</td><td>Más del límite</td></tr>
+<tr><td>SpawnKill</td><td>20m</td><td class="command">/jail %player% 20m SpawnKill</td><td>Advertir</td></tr>
+<tr><td>Boost</td><td>7d</td><td class="command">/ban %player% 7d Boost</td><td>Reset stats</td></tr>
 
 </table>
-
 </div>
 
-<!-- ===== UHC ===== -->
+<!-- UHC -->
 
 <h1 id="uhc">🏹 UHC</h1>
 <div class="card">
-
 <table>
 <tr>
 <th>Falta</th>
@@ -385,47 +403,25 @@ Ante dudas, acude a Staff superiores o Administración.
 <th>Observaciones</th>
 </tr>
 
-<tr>
-<td>CrossTeam</td>
-<td>7d → 15d → Perm</td>
-<td class="command">/ban %player%</td>
-<td class="obs">Revisar POV</td>
-</tr>
-
-<tr>
-<td>Ghosting</td>
-<td>3d → 7d</td>
-<td class="command">/ban %player%</td>
-<td class="obs">Logs chat</td>
-</tr>
-
-<tr>
-<td>Xray</td>
-<td>14d → 30d → Perm</td>
-<td class="command">/ban %player%</td>
-<td class="obs">SS obligatoria</td>
-</tr>
+<tr><td>CrossTeam</td><td>15d</td><td class="command">/ban %player% 15d CrossTeam</td><td>Revisar POV</td></tr>
+<tr><td>Ghosting</td><td>7d</td><td class="command">/ban %player% 7d Ghosting</td><td>Logs chat</td></tr>
+<tr><td>Xray</td><td>Perm</td><td class="command">/ban %player% Perm Xray</td><td>No apelable evidente</td></tr>
 
 </table>
-
 </div>
 
-<!-- ===== APELACIONES ===== -->
+<!-- APELACIONES -->
 
-<h1 id="apelaciones">📩 Apelaciones</h1>
+<h1 id="apelaciones">📩 Formato de Apelación</h1>
 <div class="card apelacion">
-
 <b>Usuario:</b><br>
 <b>Nick:</b><br>
 <b>Sanción:</b><br>
 <b>Tiempo:</b><br>
-<b>Modalidad:</b><br>
 <b>Motivo:</b><br>
-<b>¿Acepta SS?:</b><br>
 <b>Pruebas:</b><br>
 <b>Staff que sancionó:</b><br>
 <b>Resolución:</b>
-
 </div>
 
 </div>
