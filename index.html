@@ -15,7 +15,7 @@
 
     body{
       display:flex;
-      background:#0f172a;
+      background:linear-gradient(135deg,#000000,#0a0a0a,#1a0000);
       color:white;
     }
 
@@ -23,18 +23,35 @@
     .sidebar{
       width:260px;
       height:100vh;
-      background:linear-gradient(180deg,#020617,#0f172a);
+      background:linear-gradient(180deg,#000000,#140000,#1f0000);
       padding:20px;
       position:fixed;
       left:0;
       top:0;
-      border-right:1px solid #1e293b;
+      border-right:1px solid #2a0000;
+      box-shadow:0 0 25px rgba(255,0,0,.15);
+    }
+
+    .logo{
+      text-align:center;
+      margin-bottom:20px;
+    }
+
+    .logo img{
+      width:120px;
+      filter:drop-shadow(0 0 12px red);
+      animation:logoFloat 4s ease-in-out infinite;
+    }
+
+    @keyframes logoFloat{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-6px)}
     }
 
     .sidebar h2{
       text-align:center;
       margin-bottom:25px;
-      color:#ef4444;
+      color:#ff2a2a;
     }
 
     .sidebar ul{
@@ -51,7 +68,14 @@
     }
 
     .sidebar ul li:hover{
-      background:#ef4444;
+      background:#ff2a2a;
+      box-shadow:0 0 12px rgba(255,0,0,.6);
+    }
+
+    .sidebar a{
+      text-decoration:none;
+      color:white;
+      display:block;
     }
 
     /* CONTENT */
@@ -65,7 +89,7 @@
       text-align:center;
       font-size:40px;
       margin-bottom:40px;
-      color:#ef4444;
+      color:#ff2a2a;
       animation:fadeIn 1s ease-in-out;
     }
 
@@ -77,18 +101,20 @@
     /* MODALIDAD BLOQUE */
     .modalidad{
       margin-bottom:50px;
-      background:#020617;
+      background:linear-gradient(135deg,#050505,#140000);
       padding:25px;
       border-radius:20px;
-      box-shadow:0 0 20px rgba(0,0,0,.4);
+      box-shadow:0 0 25px rgba(0,0,0,.6);
       animation:fadeIn 1s ease-in-out;
+      border:1px solid #2a0000;
     }
 
     .modalidad h2{
       margin-bottom:20px;
-      color:#38bdf8;
+      color:#ff4d4d;
       text-align:center;
       font-size:28px;
+      text-shadow:0 0 8px rgba(255,0,0,.6);
     }
 
     table{
@@ -99,7 +125,7 @@
     }
 
     th{
-      background:#ef4444;
+      background:linear-gradient(90deg,#ff2a2a,#b30000);
       padding:12px;
       text-align:center;
     }
@@ -112,7 +138,7 @@
     }
 
     tr:hover td{
-      background:#111827;
+      background:#1a0000;
       transition:.3s;
     }
   </style>
@@ -122,20 +148,26 @@
 
   <!-- SIDEBAR -->
   <div class="sidebar">
+
+    <div class="logo">
+      <img src="logo.png" alt="Rival Logo">
+    </div>
+
     <h2>Rival LATAM</h2>
+
     <ul>
-      <li>📜 Generales</li>
-      <li>⚔️ Modalidades</li>
-      <li>🧊 SS / Congelados</li>
-      <li>👑 Jerarquía</li>
-      <li>📩 Observaciones</li>
+      <li><a href="#generales">📜 Generales</a></li>
+      <li><a href="#modalidades">⚔️ Modalidades</a></li>
+      <li><a href="#ss">🧊 SS / Congelados</a></li>
+      <li><a href="#jerarquia">👑 Jerarquía</a></li>
+      <li><a href="#observaciones">📩 Observaciones</a></li>
     </ul>
   </div>
 
   <!-- CONTENT -->
   <div class="content">
 
-    <div class="title">🎯 Sanciones por Modalidad</div>
+    <div id="modalidades" class="title">Sanciones por Modalidad</div>
 
     <!-- HCF -->
     <div class="modalidad">
@@ -143,16 +175,16 @@
       <table>
         <tr>
           <th>Sanción</th>
-          <th>Escala Progresiva</th>
+          <th>Tiempo</th>
         </tr>
-        <tr><td>Insiding</td><td>3d → 7d → 14d → Perm</td></tr>
-        <tr><td>Ally Ilegal</td><td>2d → 5d → 10d</td></tr>
-        <tr><td>Timer Abuse</td><td>1h → 3h → 12h</td></tr>
-        <tr><td>Claim Abuse</td><td>1d → 3d → 7d</td></tr>
-        <tr><td>Safezone Abuse</td><td>2h → 6h → 1d</td></tr>
-        <tr><td>Logout Kill</td><td>12h → 1d → 3d</td></tr>
-        <tr><td>Faction Grief</td><td>5d → 10d → Perm</td></tr>
-        <tr><td>Base Bug Abuse</td><td>7d → 14d → Perm</td></tr>
+        <tr><td>Insiding</td><td>5d → 10d → Perm</td></tr>
+        <tr><td>Ally Ilegal</td><td>3d → 7d</td></tr>
+        <tr><td>Timer Abuse</td><td>1h → 6h</td></tr>
+        <tr><td>Claim Abuse</td><td>2d → 5d</td></tr>
+        <tr><td>Safezone Abuse</td><td>2h → 12h</td></tr>
+        <tr><td>Logout Kill</td><td>1d → 3d</td></tr>
+        <tr><td>Faction Grief</td><td>7d → 14d</td></tr>
+        <tr><td>Base Bug Abuse</td><td>10d → Perm</td></tr>
       </table>
     </div>
 
@@ -162,16 +194,16 @@
       <table>
         <tr>
           <th>Sanción</th>
-          <th>Escala Progresiva</th>
+          <th>Tiempo</th>
         </tr>
-        <tr><td>Teaming Ilegal</td><td>2d → 5d → 10d</td></tr>
-        <tr><td>SpawnKill Abusivo</td><td>6h → 12h → 1d</td></tr>
-        <tr><td>Bug Abuse</td><td>2d → 5d → 10d</td></tr>
-        <tr><td>Refill Macro</td><td>3d → 7d → 14d</td></tr>
-        <tr><td>FFA CrossTeam</td><td>1d → 3d → 7d</td></tr>
-        <tr><td>Warp Combat Log</td><td>3h → 6h → 12h</td></tr>
-        <tr><td>Kill Boosting</td><td>3d → 7d → 14d → Perm</td></tr>
-        <tr><td>Stat Abuse</td><td>5d → 10d → Perm</td></tr>
+        <tr><td>Teaming Ilegal</td><td>3d → 7d</td></tr>
+        <tr><td>SpawnKill Abusivo</td><td>12h → 1d → 3d</td></tr>
+        <tr><td>Bug Abuse</td><td>2d → 5d</td></tr>
+        <tr><td>Refill Macro</td><td>2d → 10d</td></tr>
+        <tr><td>FFA CrossTeam</td><td>1d → 3d</td></tr>
+        <tr><td>Warp Combat Log</td><td>6h → 1d</td></tr>
+        <tr><td>Kill Boosting</td><td>5d → 14d</td></tr>
+        <tr><td>Stat Abuse</td><td>7d → Perm</td></tr>
       </table>
     </div>
 
@@ -181,21 +213,20 @@
       <table>
         <tr>
           <th>Sanción</th>
-          <th>Escala Progresiva</th>
+          <th>Tiempo</th>
         </tr>
-        <tr><td>CrossTeam</td><td>7d → 14d → Perm</td></tr>
-        <tr><td>Clean Fight Interference</td><td>2h → 6h → 12h</td></tr>
-        <tr><td>Skybase Ilegal</td><td>12h → 1d → 3d</td></tr>
-        <tr><td>Teaming</td><td>5d → 10d → Perm</td></tr>
-        <tr><td>Spec Info</td><td>2d → 5d → 10d</td></tr>
-        <tr><td>Border Abuse</td><td>3h → 6h → 12h</td></tr>
-        <tr><td>Trap Ilegal</td><td>2d → 5d → 10d</td></tr>
-        <tr><td>Game Throwing</td><td>5d → 10d → Perm</td></tr>
+        <tr><td>CrossTeam</td><td>15d → Perm</td></tr>
+        <tr><td>Clean Fight Interference</td><td>2h → 12h</td></tr>
+        <tr><td>Skybase Ilegal</td><td>1d → 3d</td></tr>
+        <tr><td>Teaming</td><td>10d → Perm</td></tr>
+        <tr><td>Spec Info</td><td>2d → 7d</td></tr>
+        <tr><td>Border Abuse</td><td>4h → 1d</td></tr>
+        <tr><td>Trap Ilegal</td><td>2d → 5d</td></tr>
+        <tr><td>Game Throwing</td><td>7d → Perm</td></tr>
       </table>
     </div>
 
   </div>
 
 </body>
-</html>
 </html>
