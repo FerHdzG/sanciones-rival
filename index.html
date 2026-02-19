@@ -19,7 +19,7 @@ display:flex;
 /* ====== SIDEBAR ====== */
 
 .sidebar{
-width:240px;
+width:250px;
 background:linear-gradient(180deg,#0d0d0d,#111);
 height:100vh;
 padding:20px 15px;
@@ -38,9 +38,9 @@ margin-bottom:25px;
 }
 
 .logo img{
-width:115px;
+width:120px;
 animation:logoFloat 4s ease-in-out infinite, glow 3s ease-in-out infinite;
-filter:drop-shadow(0 0 10px red);
+filter:drop-shadow(0 0 12px red);
 }
 
 @keyframes logoFloat{
@@ -50,7 +50,7 @@ filter:drop-shadow(0 0 10px red);
 
 @keyframes glow{
 0%,100%{filter:drop-shadow(0 0 8px red)}
-50%{filter:drop-shadow(0 0 18px #ff2a2a)}
+50%{filter:drop-shadow(0 0 20px #ff2a2a)}
 }
 
 .menu h3{
@@ -78,22 +78,20 @@ padding-left:16px;
 box-shadow:0 0 10px rgba(255,0,0,.4);
 }
 
-/* ====== CONTENEDOR ====== */
-
-.wrapper{
-margin-left:240px;
-display:flex;
-width:100%;
-justify-content:center;
-padding:40px 20px;
-}
-
-/* ====== CONTENIDO ====== */
+/* ====== CONTENIDO CENTRADO ====== */
 
 .content{
+margin-left:270px;
+padding:50px 20px;
 width:100%;
-max-width:950px;
-animation:fadeUp .7s ease;
+display:flex;
+flex-direction:column;
+align-items:center; /* CENTRA TODO */
+}
+
+.section{
+width:100%;
+max-width:1000px; /* CENTRADO REAL */
 }
 
 h1{
@@ -124,7 +122,6 @@ font-size:13px;
 background:#121212;
 border-radius:10px;
 overflow:hidden;
-animation:fadeUp .9s ease;
 }
 
 th{
@@ -144,30 +141,22 @@ transition:.2s;
 
 tr:hover td{
 background:#202020;
-transform:scale(1.01);
 }
+
+/* ===== ESCALA DE COLORES ===== */
+
+.scale-1{color:#4caf50;font-weight:bold;}   /* leve */
+.scale-2{color:#ffb300;font-weight:bold;}   /* media */
+.scale-3{color:#ff5722;font-weight:bold;}   /* grave */
+.scale-4{color:#ff2a2a;font-weight:bold;}   /* muy grave */
+.scale-5{color:#ff0000;font-weight:bold;text-shadow:0 0 6px red;} /* perm */
 
 .command{
 color:#ff4d4d;
 font-family:monospace;
 }
 
-/* ====== BIENVENIDA ====== */
-
-.bienvenida{
-font-size:15px;
-line-height:1.9;
-}
-
-.bienvenida p{
-margin-bottom:18px;
-}
-
-.bienvenida b{
-color:#ff3b3b;
-}
-
-/* ====== ANIMACIONES ====== */
+/* ===== ANIMACIONES ===== */
 
 @keyframes fadeUp{
 from{opacity:0;transform:translateY(30px)}
@@ -196,179 +185,173 @@ to{opacity:1}
 
 <h3>GUÍA</h3>
 <a href="#inicio">🎮 Bienvenida</a>
-<a href="#jerarquia">🏆 Jerarquía</a>
 
 <h3>SANCIONES</h3>
 <a href="#generales">🚫 Generales</a>
-<a href="#hcf">⚔️ HCF</a>
-<a href="#kitmap">🛡️ KitMap</a>
-<a href="#uhc">🏹 UHC</a>
+<a href="#modalidades">🎯 Modalidades</a>
 <a href="#apelaciones">📩 Apelaciones</a>
 
 </div>
 </div>
 
-<!-- ===== WRAPPER ===== -->
+<!-- ===== CONTENIDO ===== -->
 
-<div class="wrapper">
 <div class="content">
 
-<!-- ===== BIENVENIDA ===== -->
+<div class="section">
+
+<!-- BIENVENIDA -->
 
 <h1 id="inicio">🌟 Bienvenida al Staff</h1>
-
-<div class="card bienvenida">
+<div class="card">
 
 <p>
 ¡Hola y bienvenido al equipo de <b>Rival</b>! 👋
-Ahora formas parte de un grupo encargado de mantener el orden, la seguridad y la competitividad dentro del servidor.
 </p>
 
 <p>
-🛡️ <b>Tu misión como Staff:</b><br>
-• Resolver conflictos de manera justa.<br>
-• Hacer cumplir las normas.<br>
-• Proteger a los jugadores.<br>
-• Mantener un ambiente competitivo y respetuoso.
+Ahora formas parte del grupo encargado de mantener el orden, la seguridad y la competitividad del servidor.
 </p>
 
 <p>
-📜 <b>Tus primeros pasos:</b><br>
-• Leer el reglamento general.<br>
-• Conocer los comandos staff.<br>
-• Entender los límites de sanción.<br>
-• Actuar siempre con criterio.
-</p>
-
-<p>
-🤝 <b>No estás solo:</b><br>
-Si tienes dudas, acude a Staff superiores o Administración.
+🛡️ <b>Tu misión:</b><br>
+• Resolver conflictos.<br>
+• Hacer cumplir normas.<br>
+• Proteger jugadores.<br>
+• Mantener el respeto.
 </p>
 
 </div>
 
-<!-- ===== JERARQUÍA ===== -->
-
-<h1 id="jerarquia">🏆 Jerarquía del Staff</h1>
-<div class="card">
-<table>
-<tr>
-<th>Tier</th>
-<th>Rango</th>
-<th>Descripción</th>
-</tr>
-<tr><td>👑 S</td><td>Owner</td><td>Máxima autoridad</td></tr>
-<tr><td>💎 A+</td><td>Manager</td><td>Gestión Staff</td></tr>
-<tr><td>🔱 A</td><td>Admin</td><td>Supervisión</td></tr>
-<tr><td>🛡️ B+</td><td>Sr.Mod</td><td>Moderación avanzada</td></tr>
-<tr><td>⚔️ B</td><td>Mod</td><td>Moderación general</td></tr>
-<tr><td>🧪 C</td><td>Trial</td><td>Prueba</td></tr>
-
-<tr>
-<td>Flood</td>
-<td>1ra: 30m • 2da: 2h • 3ra: 6h</td>
-<td class="command">/mute %player% Tiempo Flood</td>
-<td>Saturar el chat</td>
-</tr>
-
-<tr>
-<td>Faltas de Respeto Staff</td>
-<td>1ra: 6h • 2da: 12h • 3ra: 1d</td>
-<td class="command">/mute %player% Tiempo Irrespeto</td>
-<td>Depende gravedad</td>
-</tr>
-
-<tr>
-<td>Amenazas</td>
-<td>1ra: 1d • 2da: 3d • 3ra: 7d</td>
-<td class="command">/ban %player% Tiempo Amenazas</td>
-<td>Revisar pruebas</td>
-</tr>
-
-<tr>
-<td>Compartir Cuentas</td>
-<td>1ra: 7d • 2da: 15d • 3ra: 30d</td>
-<td class="command">/ban %player% Tiempo AccountShare</td>
-<td>Si afecta sanciones</td>
-</tr>
-
-</table>
-</div>
-
-<!-- ===== GENERALES ===== -->
+<!-- GENERALES -->
 
 <h1 id="generales">🚫 Sanciones Generales</h1>
 <div class="card">
+
 <table>
 <tr>
 <th>Falta</th>
-<th>Escala de Tiempos</th>
+<th>Escala</th>
 <th>Comando</th>
 <th>Observaciones</th>
 </tr>
+
 <tr>
 <td>Spam</td>
-<td>30m → 1h → 3h</td>
-<td class="command">/mute %player% Tiempo Spam</td>
-<td>Escalar reincidencia</td>
+<td>
+<span class="scale-1">20m</span> →
+<span class="scale-2">35m</span> →
+<span class="scale-3">1h</span>
+</td>
+<td class="command">/punish %player% Spam</td>
+<td>Reincidencia escala</td>
 </tr>
+
 <tr>
-<td>Insultos</td>
-<td>1h → 3h → 6h</td>
-<td class="command">/mute %player% Tiempo Insultos</td>
-<td>Depende gravedad</td>
+<td>Racism</td>
+<td>
+<span class="scale-2">1h</span> →
+<span class="scale-3">3h</span> →
+<span class="scale-4">1d</span>
+</td>
+<td class="command">/punish %player% Racism</td>
+<td>Cero tolerancia</td>
 </tr>
+
 <tr>
-<td>Uso de Hacks</td>
-<td>14d → 30d → 60d → Perm</td>
-<td class="command">/ban %player% Tiempo Hacks</td>
-<td>SS obligatoria</td>
+<td>Toxic Behavior</td>
+<td>
+<span class="scale-1">35m</span> →
+<span class="scale-3">4h</span> →
+<span class="scale-4">1d</span>
+</td>
+<td class="command">/punish %player% Toxic</td>
+<td>Revisar chat</td>
 </tr>
+
 <tr>
-<td>Negarse a SS</td>
-<td>30d → Perm</td>
-<td class="command">/ban %player% Tiempo SSRefusal</td>
-<td>Salir congelado</td>
+<td>Harassment</td>
+<td>
+<span class="scale-3">30d</span> →
+<span class="scale-4">7d Ban</span>
+</td>
+<td class="command">/punish %player% Harassment</td>
+<td>Pruebas obligatorias</td>
 </tr>
+
+<tr>
+<td>DDoS / Dox</td>
+<td>
+<span class="scale-4">1w Ban</span>
+</td>
+<td class="command">/punish %player% DDoS</td>
+<td>Muy grave</td>
+</tr>
+
+<tr>
+<td>Hacks</td>
+<td>
+<span class="scale-3">14d</span> →
+<span class="scale-4">30d</span> →
+<span class="scale-5">Perm</span>
+</td>
+<td class="command">/punish %player% Hacks</td>
+<td>SS válida</td>
+</tr>
+
 </table>
+
 </div>
 
-<!-- ===== HCF ===== -->
+<!-- MODALIDADES -->
 
-<h1 id="hcf">⚔️ HCF</h1>
+<h1 id="modalidades">🎯 Sanciones por Modalidad</h1>
 <div class="card">
+
 <table>
-<tr><th>Falta</th><th>Tiempo</th><th>Comando</th><th>Obs</th></tr>
-<tr><td>Bug Abuse</td><td>7d</td><td class="command">/ban %player% 7d BugAbuse</td><td>Clip</td></tr>
-<tr><td>Insiding</td><td>5d</td><td class="command">/ban %player% 5d Insiding</td><td>Revisar fac</td></tr>
+<tr>
+<th>Modalidad</th>
+<th>Falta</th>
+<th>Escala</th>
+<th>Comando</th>
+</tr>
+
+<tr>
+<td>HCF</td>
+<td>Insiding</td>
+<td><span class="scale-2">5d</span></td>
+<td class="command">/punish %player% Insiding</td>
+</tr>
+
+<tr>
+<td>KitMap</td>
+<td>Teaming</td>
+<td><span class="scale-2">3d</span></td>
+<td class="command">/punish %player% Teaming</td>
+</tr>
+
+<tr>
+<td>UHC</td>
+<td>CrossTeam</td>
+<td><span class="scale-3">15d</span></td>
+<td class="command">/punish %player% CrossTeam</td>
+</tr>
+
 </table>
+
 </div>
 
-<!-- ===== KITMAP ===== -->
+<!-- APELACIONES -->
 
-<h1 id="kitmap">🛡️ KitMap</h1>
+<h1 id="apelaciones">📩 Apelaciones</h1>
 <div class="card">
-<table>
-<tr><th>Falta</th><th>Tiempo</th><th>Comando</th><th>Obs</th></tr>
-<tr><td>Teaming</td><td>3d</td><td class="command">/ban %player% 3d Teaming</td><td>Límite</td></tr>
-</table>
-</div>
-
-<!-- ===== UHC ===== -->
-
-<h1 id="uhc">🏹 UHC</h1>
-<div class="card">
-<table>
-<tr><th>Falta</th><th>Tiempo</th><th>Comando</th><th>Obs</th></tr>
-<tr><td>CrossTeam</td><td>15d</td><td class="command">/ban %player% 15d CrossTeam</td><td>Pruebas</td></tr>
-</table>
-</div>
-
-<!-- ===== APELACIONES ===== -->
-
-<h1 id="apelaciones">📩 Formato de Apelación</h1>
-<div class="card">
-Usuario:<br>Nick:<br>Sanción:<br>Tiempo:<br>Motivo:<br>Pruebas:<br>Staff:<br>Resolución:
+Usuario:<br>
+Nick:<br>
+Sanción:<br>
+Tiempo:<br>
+Staff:<br>
+Pruebas:<br>
+Resolución:
 </div>
 
 </div>
