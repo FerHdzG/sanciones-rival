@@ -11,11 +11,12 @@
       padding:0;
       box-sizing:border-box;
       font-family: Arial, Helvetica, sans-serif;
+      scroll-behavior:smooth;
     }
 
     body{
       display:flex;
-      background:linear-gradient(135deg,#000000,#0a0a0a,#1a0000);
+      background:linear-gradient(135deg,#000000,#1a0000,#000000);
       color:white;
     }
 
@@ -23,27 +24,27 @@
     .sidebar{
       width:260px;
       height:100vh;
-      background:linear-gradient(180deg,#000000,#140000,#1f0000);
+      background:linear-gradient(180deg,#000000,#140000);
       padding:20px;
       position:fixed;
       left:0;
       top:0;
-      border-right:1px solid #2a0000;
-      box-shadow:0 0 25px rgba(255,0,0,.15);
+      border-right:2px solid #ff0000;
+      box-shadow:0 0 25px #ff000055;
     }
 
     .logo{
       text-align:center;
-      margin-bottom:20px;
+      margin-bottom:25px;
     }
 
     .logo img{
       width:120px;
-      filter:drop-shadow(0 0 12px red);
-      animation:logoFloat 4s ease-in-out infinite;
+      filter:drop-shadow(0 0 10px red);
+      animation:float 4s ease-in-out infinite;
     }
 
-    @keyframes logoFloat{
+    @keyframes float{
       0%,100%{transform:translateY(0)}
       50%{transform:translateY(-6px)}
     }
@@ -58,24 +59,23 @@
       list-style:none;
     }
 
-    .sidebar ul li{
+    .sidebar ul li a{
+      display:block;
       padding:12px;
       margin:8px 0;
-      background:#020617;
+      background:#0a0a0a;
       border-radius:10px;
       cursor:pointer;
       transition:.3s;
-    }
-
-    .sidebar ul li:hover{
-      background:#ff2a2a;
-      box-shadow:0 0 12px rgba(255,0,0,.6);
-    }
-
-    .sidebar a{
-      text-decoration:none;
       color:white;
-      display:block;
+      text-decoration:none;
+      border-left:4px solid transparent;
+    }
+
+    .sidebar ul li a:hover{
+      background:#ff0000;
+      border-left:4px solid white;
+      transform:translateX(5px);
     }
 
     /* CONTENT */
@@ -98,25 +98,17 @@
       to{opacity:1; transform:translateY(0);} 
     }
 
-    /* MODALIDAD BLOQUE */
-    .modalidad{
-      margin-bottom:50px;
-      background:linear-gradient(135deg,#050505,#140000);
+    .card{
+      background:#0a0a0a;
       padding:25px;
       border-radius:20px;
-      box-shadow:0 0 25px rgba(0,0,0,.6);
+      margin-bottom:40px;
+      box-shadow:0 0 20px #000;
+      border:1px solid #220000;
       animation:fadeIn 1s ease-in-out;
-      border:1px solid #2a0000;
     }
 
-    .modalidad h2{
-      margin-bottom:20px;
-      color:#ff4d4d;
-      text-align:center;
-      font-size:28px;
-      text-shadow:0 0 8px rgba(255,0,0,.6);
-    }
-
+    /* TABLAS */
     table{
       width:100%;
       border-collapse:collapse;
@@ -125,7 +117,7 @@
     }
 
     th{
-      background:linear-gradient(90deg,#ff2a2a,#b30000);
+      background:#ff0000;
       padding:12px;
       text-align:center;
     }
@@ -133,15 +125,33 @@
     td{
       padding:12px;
       text-align:center;
-      background:#020617;
-      border-bottom:1px solid #1e293b;
+      background:#050505;
+      border-bottom:1px solid #1a1a1a;
     }
 
     tr:hover td{
-      background:#1a0000;
+      background:#140000;
       transition:.3s;
     }
-  </style>
+
+    /* MODALIDAD BLOQUE */
+    .modalidad{
+      margin-bottom:50px;
+      background:#050505;
+      padding:25px;
+      border-radius:20px;
+      box-shadow:0 0 20px rgba(0,0,0,.6);
+      border:1px solid #220000;
+      animation:fadeIn 1s ease-in-out;
+    }
+
+    .modalidad h2{
+      margin-bottom:20px;
+      color:#ff2a2a;
+      text-align:center;
+      font-size:28px;
+    }
+</style>
 </head>
 
 <body>
@@ -150,8 +160,21 @@
   <div class="sidebar">
 
     <div class="logo">
-      <img src="logo.png" alt="Rival Logo">
+      <img src="logo.png">
     </div>
+
+    <h2>Rival LATAM</h2>
+
+    <ul>
+      <li><a href="#bienvenida">🌟 Bienvenida</a></li>
+      <li><a href="#generales">🚫 Generales</a></li>
+      <li><a href="#modalidades">⚔️ Modalidades</a></li>
+      <li><a href="#ss">🧊 SS / Congelados</a></li>
+      <li><a href="#jerarquia">👑 Jerarquía</a></li>
+      <li><a href="#observaciones">📩 Observaciones</a></li>
+    </ul>
+
+  </div>
 
     <h2>Rival LATAM</h2>
 
@@ -166,6 +189,33 @@
 
   <!-- CONTENT -->
   <div class="content">
+
+    <div id="bienvenida" class="card">
+      <div class="title">🌟 Bienvenido al Staff</div>
+      <p>
+      Bienvenido al equipo de moderación de Rival Latam.<br><br>
+      Tu misión es mantener el orden, proteger a los jugadores y garantizar
+      una experiencia competitiva justa dentro del servidor.
+      <br><br>
+      Recuerda siempre actuar con criterio, respeto y pruebas.
+      </p>
+    </div>
+
+    <div id="generales" class="card">
+      <div class="title">🚫 Sanciones Generales</div>
+      <table>
+        <tr><th>Falta</th><th>Tiempo</th></tr>
+        <tr><td>Spam</td><td>20m → 35m → 1h</td></tr>
+        <tr><td>Racismo</td><td>1h → 3h → 1d</td></tr>
+        <tr><td>Toxicidad</td><td>35m → 4h → 1d</td></tr>
+        <tr><td>Falta de Respeto Staff</td><td>1h → 3h → 1d</td></tr>
+        <tr><td>Dox / DDoS</td><td>7d → Perm</td></tr>
+        <tr><td>Amenazas de Muerte</td><td>7d → Perm</td></tr>
+        <tr><td>Hacks</td><td>14d → 30d → Perm</td></tr>
+      </table>
+    </div>
+
+    <div id="modalidades">
 
     <!-- BIENVENIDA -->
     <div id="generales" class="title">🌟 Bienvenido al Staff</div>
